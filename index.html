@@ -94,9 +94,15 @@
   }
 
   /* ===================== TAB 1: EDITORIAL (Left reference) ===================== */
-  #tab-editorial .hero{position:relative;background:var(--ink);overflow:hidden;}
+  #tab-editorial .hero{position:relative;background:linear-gradient(135deg,var(--ink) 0%,#2a2b30 100%);overflow:hidden;}
   #tab-editorial .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:520px;}
   #tab-editorial .hero-copy{padding:80px 60px 80px 0;display:flex;flex-direction:column;justify-content:center;color:var(--paper);position:relative;z-index:2;}
+  #tab-editorial .hero-copy>*{opacity:0;animation:editorialHeroUp .8s ease forwards;}
+  #tab-editorial .hero-copy>.eyebrow{animation-delay:.1s;}
+  #tab-editorial .hero-copy>h1{animation-delay:.22s;}
+  #tab-editorial .hero-copy>.lede{animation-delay:.36s;}
+  #tab-editorial .hero-copy>.hero-ctas{animation-delay:.5s;}
+  @keyframes editorialHeroUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
   #tab-editorial .hero-copy h1{color:var(--paper);font-size:clamp(38px,4.4vw,54px);line-height:1.12;max-width:15ch;}
   #tab-editorial .hero-copy p.lede{color:var(--stone-light);font-size:18px;max-width:44ch;}
   #tab-editorial .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
@@ -104,24 +110,33 @@
   #tab-editorial .hero-photo .photo-placeholder{position:absolute;inset:0;border:none;}
 
   #tab-editorial .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;padding:88px 0;}
-  #tab-editorial .why-grid h2{font-size:clamp(30px,3vw,40px);max-width:15ch;}
+  #tab-editorial .why-grid h2{font-size:clamp(30px,3vw,40px);max-width:15ch;line-height:1.15;letter-spacing:-.01em;}
   #tab-editorial .why-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;}
   #tab-editorial .why-list li h4{font-size:16px;margin:0 0 4px;font-weight:700;}
   #tab-editorial .why-list li p{font-size:14.5px;color:var(--stone);margin:0;}
-  #tab-editorial .why-list .icon{width:28px;height:28px;margin-bottom:8px;}
+  #tab-editorial .why-list .icon{width:22px;height:22px;margin-bottom:0;}
+  #tab-editorial .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;margin-bottom:14px;}
+  #tab-editorial .why-list .icon-badge{background:var(--rose);}
+  #tab-editorial .wwd-card .icon-badge{background:rgba(255,255,255,.14);}
+  #tab-editorial .wwd-card .icon-badge .icon{width:22px;height:22px;margin-bottom:0;color:var(--rose);}
 
-  #tab-editorial .what-we-do{background:var(--maroon);color:var(--paper);padding:88px 0;}
+  #tab-editorial .what-we-do{background:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/18px 18px,linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);color:var(--paper);padding:88px 0;}
   #tab-editorial .what-we-do-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;margin-bottom:20px;}
-  #tab-editorial .what-we-do h2{color:var(--paper);font-size:clamp(30px,3vw,40px);}
+  #tab-editorial .what-we-do h2{color:var(--paper);font-size:clamp(30px,3vw,40px);line-height:1.15;letter-spacing:-.01em;}
   #tab-editorial .what-we-do .lede{color:var(--rose);font-size:17px;}
   #tab-editorial .wwd-card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:36px;}
   #tab-editorial .wwd-card h3{color:var(--paper);font-size:18px;border-top:2px solid var(--rose);padding-top:14px;margin-bottom:10px;}
   #tab-editorial .wwd-card ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--rose);}
   #tab-editorial .wwd-card li{padding:3px 0;}
 
-  #tab-editorial .mission{padding:88px 0;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}
-  #tab-editorial .mission-photo .photo-placeholder{aspect-ratio:4/3;}
-  #tab-editorial .mission h2{font-size:clamp(30px,3vw,40px);}
+  #tab-editorial .mission{padding:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;}
+  #tab-editorial .mission-media{position:relative;height:480px;}
+  #tab-editorial .mission-media .photo-placeholder{position:absolute;inset:0;border:none;}
+  #tab-editorial .mission-badge{position:absolute;left:40px;bottom:-30px;background:var(--maroon);color:#fff;border-radius:10px;padding:22px 28px;box-shadow:0 14px 30px rgba(32,33,36,.22);z-index:2;}
+  #tab-editorial .mission-badge-num{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:38px;line-height:1;}
+  #tab-editorial .mission-badge-label{font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+  #tab-editorial .mission-copy{max-width:520px;margin:0 auto;padding:70px 40px;}
+  #tab-editorial .mission h2{font-size:clamp(30px,3vw,40px);line-height:1.15;letter-spacing:-.01em;}
 
   #tab-editorial .closing-cta{background:var(--rose);padding:44px 0;}
   #tab-editorial .closing-cta .flex{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
@@ -140,8 +155,32 @@
   #tab-editorial .why-list{gap:20px;border-left:1px solid var(--stone-light);padding-left:32px;}
   #tab-editorial .why-list li{background:#fff;border:1px solid var(--stone-light);border-radius:10px;padding:24px 22px;}
 
+  /* ---- Scroll reveal ---- */
+  #tab-editorial .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+  #tab-editorial .reveal.is-visible{opacity:1;transform:translateY(0);}
+  #tab-editorial .reveal-delay{transition-delay:.15s;}
+
+  /* ---- Hover lift ---- */
+  #tab-editorial .stat-block{transition:transform .25s ease,box-shadow .25s ease;}
+  #tab-editorial .stat-block:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(32,33,36,.14);}
+  #tab-editorial .why-list li{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+  #tab-editorial .why-list li:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(32,33,36,.1);border-color:var(--maroon);}
+  #tab-editorial .wwd-card{transition:transform .25s ease;}
+  #tab-editorial .wwd-card:hover{transform:translateY(-4px);}
+  #tab-editorial .btn{transition:transform .2s ease,box-shadow .2s ease,background .15s ease,color .15s ease,border-color .15s ease;}
+  #tab-editorial .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(32,33,36,.16);}
+
+  @media (prefers-reduced-motion:reduce){
+    #tab-editorial .hero-copy>*{animation:none!important;opacity:1!important;}
+    #tab-editorial .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+    #tab-editorial .stat-block,#tab-editorial .why-list li,#tab-editorial .wwd-card,#tab-editorial .btn{transition:none!important;}
+  }
+
   @media (max-width:900px){
     #tab-editorial .hero-grid, #tab-editorial .why-grid, #tab-editorial .what-we-do-grid, #tab-editorial .mission{grid-template-columns:1fr;}
+    #tab-editorial .mission-media{height:320px;}
+    #tab-editorial .mission-badge{position:static;margin:-30px 20px 0;display:inline-block;}
+    #tab-editorial .mission-copy{max-width:none;padding:40px 24px 56px;}
     #tab-editorial .hero-photo{min-height:280px;}
     #tab-editorial .why-list{grid-template-columns:1fr;border-left:none;padding-left:0;margin-top:8px;}
     #tab-editorial .wwd-card-grid{grid-template-columns:repeat(2,1fr);}
@@ -281,7 +320,7 @@
 
   <section class="stat-row">
     <div class="container">
-      <div class="stat-grid">
+      <div class="stat-grid reveal">
         <div class="stat-block"><div class="stat-num">26</div><div class="stat-label">Years in Business</div></div>
         <div class="stat-block"><div class="stat-num">2,000+</div><div class="stat-label">Employers Supported</div></div>
         <div class="stat-block"><div class="stat-num">1</div><div class="stat-label">Point of Contact. Always.</div></div>
@@ -292,27 +331,27 @@
 
   <section>
     <div class="container why-grid">
-      <div>
+      <div class="reveal">
         <p class="eyebrow">A Better Way</p>
         <h2>We make employee benefits<br>simple.</h2>
         <p style="color:var(--stone);">From plan design and compliance to enrollment and ongoing support, we help you take the headache out of benefits — so you can focus on what matters most: your people and your business.</p>
         <a class="btn btn-primary btn-sm" href="#">Why PBS</a>
       </div>
-      <ul class="why-list">
+      <ul class="why-list reveal reveal-delay">
         <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg></span>
           <h4>Expert Guidance</h4><p>Clear advice. No jargon.</p>
         </li>
         <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9"/><path d="M12 9c0-4-3-6-7-6 0 4 3 7 7 6z"/><path d="M12 13c0-4 3-6 7-6 0 4-3 7-7 6z"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9"/><path d="M12 9c0-4-3-6-7-6 0 4 3 7 7 6z"/><path d="M12 13c0-4 3-6 7-6 0 4-3 7-7 6z"/></svg></span>
           <h4>Personalized Solutions</h4><p>Plans built around your goals.</p>
         </li>
         <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg></span>
           <h4>Dedicated Support</h4><p>One point of contact. Always.</p>
         </li>
         <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
           <h4>Long-Term Partnership</h4><p>We're here for what's next.</p>
         </li>
       </ul>
@@ -321,31 +360,31 @@
 
   <section class="what-we-do">
     <div class="container">
-      <div class="what-we-do-grid">
+      <div class="what-we-do-grid reveal">
         <div>
           <p class="eyebrow on-dark">What We Do</p>
           <h2>Benefits that work for your business.</h2>
         </div>
         <p class="lede">We don't just sell plans. We build comprehensive benefit programs that attract talent, support your team, and keep your business moving forward.</p>
       </div>
-      <div class="wwd-card-grid">
+      <div class="wwd-card-grid reveal reveal-delay">
         <div class="wwd-card">
-          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg>
+          <span class="icon-badge"><svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg></span>
           <h3>Health &amp; Wellness</h3>
           <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
         </div>
         <div class="wwd-card">
-          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg>
+          <span class="icon-badge"><svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg></span>
           <h3>Income Protection</h3>
           <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
         </div>
         <div class="wwd-card">
-          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+          <span class="icon-badge"><svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
           <h3>Compliance &amp; HR</h3>
           <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
         </div>
         <div class="wwd-card">
-          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+          <span class="icon-badge"><svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg></span>
           <h3>Extras</h3>
           <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
         </div>
@@ -354,10 +393,14 @@
   </section>
 
   <section class="mission">
-    <div class="container mission-photo">
+    <div class="mission-media reveal">
       <div class="photo-placeholder">Team photo — client to provide</div>
+      <div class="mission-badge">
+        <div class="mission-badge-num">100%</div>
+        <div class="mission-badge-label">Independent Firm</div>
+      </div>
     </div>
-    <div class="container">
+    <div class="mission-copy reveal reveal-delay">
       <p class="eyebrow">Our Mission</p>
       <h2>Real people. Real support.</h2>
       <p style="color:var(--stone);">We're an independent firm, which means we work for you — not the carriers. Our job is to find the right solutions, provide exceptional service, and be a trusted partner for the long haul.</p>
@@ -366,7 +409,7 @@
   </section>
 
   <section class="closing-cta">
-    <div class="container flex">
+    <div class="container flex reveal">
       <div>
         <h3>Ready to stop dreading open enrollment?</h3>
         <p>Tell us about your company and we'll put together options that work for your budget.</p>
@@ -684,6 +727,24 @@
       window.scrollTo(0,0);
     });
   });
+
+  (function(){
+    var revealEls = document.querySelectorAll('#tab-editorial .reveal');
+    if (!revealEls.length) return;
+    if (!('IntersectionObserver' in window)) {
+      revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ observer.observe(el); });
+  })();
 </script>
 
 </body>
