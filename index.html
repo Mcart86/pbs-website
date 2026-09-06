@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PBS Homepage Concepts — Client Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:ital,wght@0,400;0,500;0,700;1,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#98012E; --maroon-deep:#5C0A1E; --brown:#45230D; --paper:#FAF8F4;
+    --ink:#241509; --stone:#8A7A6B; --stone-light:#D9CFC3; --rose:#EFE0DE;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:17px;line-height:1.65;}
+  a{color:inherit;} img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Frank Ruhl Libre',serif;font-weight:500;margin:0 0 18px;color:var(--ink);}
+  p{margin:0 0 16px;}
+  .container{max-width:1320px;margin:0 auto;padding:0 40px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:13px;font-weight:700;color:var(--maroon);margin-bottom:14px;}
+  .eyebrow.on-dark{color:var(--rose);}
+  .icon{width:40px;height:40px;color:var(--maroon);margin-bottom:14px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:600;font-size:15px;padding:14px 26px;border-radius:4px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s ease, color .15s ease, border-color .15s ease;}
+  .btn-primary{background:var(--maroon);color:var(--paper);}
+  .btn-primary:hover{background:var(--maroon-deep);}
+  .btn-outline{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-outline-light{background:transparent;border-color:var(--stone-light);color:var(--paper);}
+  .btn-outline-light:hover{background:var(--paper);color:var(--ink);}
+  .btn-light{background:var(--paper);color:var(--maroon);}
+  .btn-light:hover{background:var(--rose);}
+  .btn-sm{padding:9px 18px;font-size:13.5px;}
+  .text-link{color:var(--maroon);font-weight:600;text-decoration:none;font-size:15px;}
+  .text-link:hover{text-decoration:underline;}
+
+  /* ---- Review bar ---- */
+  .review-bar{position:sticky;top:0;z-index:200;background:var(--ink);color:var(--paper);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Public Sans',sans-serif;border-bottom:3px solid var(--maroon);}
+  .review-label{font-size:13px;color:var(--stone-light);letter-spacing:.02em;}
+  .review-tabs{display:flex;gap:8px;}
+  .review-tab{background:transparent;border:1px solid var(--stone-light);color:var(--paper);font-family:'Public Sans',sans-serif;font-size:14px;font-weight:600;padding:8px 16px;border-radius:3px;cursor:pointer;}
+  .review-tab.active{background:var(--maroon);border-color:var(--maroon);}
+  .mockup{display:none;} .mockup.active{display:block;}
+
+  /* ---- Shared site header (all 3 tabs) ---- */
+  .site-header{background:var(--paper);border-bottom:1px solid var(--stone-light);position:relative;z-index:10;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px;flex-wrap:wrap;}
+  .brand img{height:50px;width:auto;}
+  .main-nav ul{list-style:none;display:flex;gap:34px;margin:0;padding:0;}
+  .main-nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink);border-bottom:2px solid transparent;padding-bottom:4px;}
+  .main-nav a:hover{border-bottom-color:var(--maroon);}
+  .header-actions{display:flex;gap:12px;align-items:center;}
+
+  /* ---- Shared stat rows ---- */
+  .stat-row{background:var(--paper);padding:52px 0;}
+  .stat-row .stat-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  .stat-block{flex:1;min-width:150px;border-left:1px solid var(--stone-light);padding-left:24px;}
+  .stat-block:first-child{border-left:none;padding-left:0;}
+  .stat-num{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:44px;color:var(--maroon);line-height:1;margin-bottom:6px;}
+  .stat-label{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);font-weight:600;}
+  .stat-note{font-size:12px;color:var(--stone);margin-top:18px;font-style:italic;}
+
+  /* ---- Shared 4-card service grid ---- */
+  .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:44px;}
+  .service-card{background:var(--paper);border:1px solid var(--stone-light);border-radius:6px;padding:32px 26px;}
+  .service-card h3{font-size:19px;margin-bottom:12px;}
+  .service-card ul{list-style:none;margin:0 0 18px;padding:0;font-size:14.5px;color:var(--ink);}
+  .service-card li{padding:3px 0;}
+  .service-card .text-link{font-size:14px;}
+
+  /* ---- Footer ---- */
+  .site-footer{background:var(--ink);color:var(--stone-light);padding:56px 0 0;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:40px;border-bottom:1px solid #3c2818;}
+  .footer-brand img{height:42px;margin-bottom:10px;}
+  .footer-nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;flex-wrap:wrap;}
+  .footer-nav a{text-decoration:none;color:var(--stone-light);font-size:14.5px;}
+  .footer-address{font-style:normal;font-size:14.5px;text-align:right;}
+  .footer-bottom{display:flex;justify-content:space-between;padding:20px 0;font-size:13px;color:var(--stone);flex-wrap:wrap;gap:10px;}
+  .footer-bottom a{color:var(--stone);text-decoration:underline;margin-left:16px;}
+
+  .photo-placeholder{border:1px dashed var(--stone-light);color:var(--stone-light);font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;}
+
+  @media (max-width:960px){
+    .card-grid{grid-template-columns:repeat(2,1fr);}
+    .main-nav{display:none;}
+  }
+  @media (max-width:640px){
+    .card-grid{grid-template-columns:1fr;}
+    .stat-row .stat-grid{flex-direction:column;}
+    .stat-block{border-left:none;padding-left:0;border-top:1px solid var(--stone-light);padding-top:16px;}
+    .stat-block:first-child{border-top:none;padding-top:0;}
+  }
+
+  /* ===================== TAB 1: EDITORIAL (Left reference) ===================== */
+  #tab-editorial .hero{position:relative;background:var(--ink);overflow:hidden;}
+  #tab-editorial .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:520px;}
+  #tab-editorial .hero-copy{padding:80px 60px 80px 0;display:flex;flex-direction:column;justify-content:center;color:var(--paper);position:relative;z-index:2;}
+  #tab-editorial .hero-copy h1{color:var(--paper);font-size:clamp(38px,4.4vw,54px);line-height:1.12;max-width:15ch;}
+  #tab-editorial .hero-copy p.lede{color:var(--stone-light);font-size:18px;max-width:44ch;}
+  #tab-editorial .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+  #tab-editorial .hero-photo{position:relative;background:var(--brown);}
+  #tab-editorial .hero-photo .photo-placeholder{position:absolute;inset:0;border:none;}
+
+  #tab-editorial .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;padding:88px 0;}
+  #tab-editorial .why-grid h2{font-size:clamp(30px,3vw,40px);max-width:15ch;}
+  #tab-editorial .why-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;}
+  #tab-editorial .why-list li h4{font-size:16px;margin:0 0 4px;font-weight:700;}
+  #tab-editorial .why-list li p{font-size:14.5px;color:var(--stone);margin:0;}
+  #tab-editorial .why-list .icon{width:28px;height:28px;margin-bottom:8px;}
+
+  #tab-editorial .what-we-do{background:var(--maroon);color:var(--paper);padding:88px 0;}
+  #tab-editorial .what-we-do-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;margin-bottom:20px;}
+  #tab-editorial .what-we-do h2{color:var(--paper);font-size:clamp(30px,3vw,40px);}
+  #tab-editorial .what-we-do .lede{color:var(--rose);font-size:17px;}
+  #tab-editorial .wwd-card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:36px;}
+  #tab-editorial .wwd-card h3{color:var(--paper);font-size:18px;border-top:2px solid var(--rose);padding-top:14px;margin-bottom:10px;}
+  #tab-editorial .wwd-card ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--rose);}
+  #tab-editorial .wwd-card li{padding:3px 0;}
+
+  #tab-editorial .mission{padding:88px 0;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}
+  #tab-editorial .mission-photo .photo-placeholder{aspect-ratio:4/3;}
+  #tab-editorial .mission h2{font-size:clamp(30px,3vw,40px);}
+
+  #tab-editorial .closing-cta{background:var(--rose);padding:44px 0;}
+  #tab-editorial .closing-cta .flex{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  #tab-editorial .closing-cta h3{font-size:20px;margin:0 0 4px;}
+  #tab-editorial .closing-cta p{margin:0;font-size:14.5px;color:var(--brown);}
+
+  @media (max-width:900px){
+    #tab-editorial .hero-grid, #tab-editorial .why-grid, #tab-editorial .what-we-do-grid, #tab-editorial .mission{grid-template-columns:1fr;}
+    #tab-editorial .hero-photo{min-height:280px;}
+    #tab-editorial .why-list{grid-template-columns:1fr;}
+    #tab-editorial .wwd-card-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* ===================== TAB 2: LEDGER (Middle reference) ===================== */
+  #tab-ledger .hero{position:relative;background:linear-gradient(120deg,var(--maroon-deep) 0%, var(--brown) 100%);color:var(--paper);overflow:hidden;padding:76px 0 0;}
+  #tab-ledger .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;}
+  #tab-ledger .hero-copy h1{color:var(--paper);font-size:clamp(40px,4.6vw,58px);line-height:1.1;max-width:14ch;}
+  #tab-ledger .hero-copy p.lede{color:var(--stone-light);font-size:18px;max-width:46ch;}
+  #tab-ledger .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:360px;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);background:var(--ink);}
+  #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--ink);color:var(--stone-light);}
+  #tab-ledger .hero-values{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:44px 0 56px;border-top:1px solid #6a2436;margin-top:44px;}
+  #tab-ledger .hero-values .icon{color:var(--rose);width:34px;height:34px;margin-bottom:10px;}
+  #tab-ledger .hero-values p{color:var(--stone-light);font-size:14.5px;margin:0;}
+
+  #tab-ledger .experience{padding:88px 0;}
+  #tab-ledger .experience-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center;}
+  #tab-ledger .experience h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
+  #tab-ledger .stat-stack{display:flex;flex-direction:column;gap:26px;}
+  #tab-ledger .stat-stack .stat-num{font-size:40px;}
+
+  #tab-ledger .build{background:var(--rose);padding:88px 0;}
+  #tab-ledger .build h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
+  #tab-ledger .build .service-card{background:var(--paper);}
+
+  #tab-ledger .testimonial{background:linear-gradient(rgba(36,21,9,.72),rgba(36,21,9,.8)), linear-gradient(135deg,#3a2418,#1c1108);padding:110px 0;text-align:center;}
+  #tab-ledger .testimonial blockquote{font-family:'Frank Ruhl Libre',serif;font-style:italic;font-size:26px;line-height:1.4;color:var(--paper);max-width:52ch;margin:0 auto 20px;}
+  #tab-ledger .testimonial cite{font-style:normal;color:var(--stone-light);font-size:14px;}
+
+  #tab-ledger .carrier-strip{background:var(--paper);padding:56px 0;text-align:center;}
+  #tab-ledger .carrier-strip .carrier-note{font-size:13px;color:var(--stone);margin-bottom:32px;}
+  #tab-ledger .carrier-row{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;}
+  #tab-ledger .carrier-chip{font-family:'Frank Ruhl Libre',serif;font-size:15px;color:var(--stone);padding:10px 20px;border:1px solid var(--stone-light);border-radius:3px;}
+
+  #tab-ledger .final-cta{background:var(--maroon);color:var(--paper);padding:64px 0;}
+  #tab-ledger .final-cta .flex{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;}
+  #tab-ledger .final-cta h2{color:var(--paper);font-size:clamp(28px,3vw,36px);margin-bottom:6px;}
+  #tab-ledger .final-cta p{color:var(--rose);margin:0;max-width:44ch;}
+
+  @media (max-width:900px){
+    #tab-ledger .hero-grid, #tab-ledger .experience-grid{grid-template-columns:1fr;}
+    #tab-ledger .hero-photo-wrap{clip-path:none;min-height:260px;margin-top:24px;}
+    #tab-ledger .hero-values{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* ===================== TAB 3: BOLD (Right reference) ===================== */
+  #tab-adventurous .hero{background:var(--paper);padding:76px 0 0;}
+  #tab-adventurous .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
+  #tab-adventurous .hero-copy h1{font-size:clamp(38px,4.4vw,54px);line-height:1.12;max-width:14ch;}
+  #tab-adventurous .hero-copy p.lede{color:var(--brown);font-size:18px;max-width:44ch;}
+  #tab-adventurous .hero-ctas{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:8px;}
+  #tab-adventurous .hero-visual{display:flex;align-items:center;gap:22px;}
+  #tab-adventurous .hero-visual .photo-placeholder{width:150px;height:190px;flex:none;background:var(--rose);color:var(--brown);border-color:var(--stone);}
+  #tab-adventurous .stack-list{font-family:'Frank Ruhl Libre',serif;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--brown);line-height:2.1;}
+  #tab-adventurous .hero-stats{padding:48px 0 56px;border-top:1px solid var(--stone-light);margin-top:44px;}
+  #tab-adventurous .hero-stats .stat-grid{justify-content:space-between;}
+
+  #tab-adventurous .help{padding:88px 0;}
+  #tab-adventurous .help-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  #tab-adventurous .help h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
+  #tab-adventurous .check-list{list-style:none;margin:0 0 24px;padding:0;}
+  #tab-adventurous .check-list li{display:flex;gap:12px;align-items:flex-start;padding:8px 0;font-size:15.5px;}
+  #tab-adventurous .check-list .icon{width:20px;height:20px;flex:none;margin:2px 0 0;}
+
+  #tab-adventurous .offer{padding:0 0 88px;}
+  #tab-adventurous .offer-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center;}
+  #tab-adventurous .offer-photo .photo-placeholder{aspect-ratio:1/1;}
+  #tab-adventurous .offer h2{font-size:clamp(28px,3vw,38px);}
+  #tab-adventurous .offer-list{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;margin-top:28px;}
+  #tab-adventurous .offer-list h4{font-size:15.5px;margin:0 0 4px;font-weight:700;}
+  #tab-adventurous .offer-list p{font-size:13.5px;color:var(--stone);margin:0;}
+  #tab-adventurous .offer-list .icon{width:24px;height:24px;margin-bottom:6px;}
+
+  #tab-adventurous .testimonial{background:var(--rose);padding:70px 0;text-align:center;}
+  #tab-adventurous .testimonial blockquote{font-family:'Frank Ruhl Libre',serif;font-style:italic;font-size:22px;color:var(--ink);max-width:48ch;margin:0 auto 14px;}
+  #tab-adventurous .testimonial cite{font-style:normal;color:var(--stone);font-size:14px;}
+
+  #tab-adventurous .closing-cta{padding:56px 0;}
+  #tab-adventurous .closing-cta .flex{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+  #tab-adventurous .closing-cta h3{font-size:20px;margin:0 0 4px;}
+  #tab-adventurous .closing-cta p{margin:0;font-size:14.5px;color:var(--stone);}
+
+  @media (max-width:900px){
+    #tab-adventurous .hero-grid, #tab-adventurous .help-grid, #tab-adventurous .offer-grid{grid-template-columns:1fr;}
+    #tab-adventurous .offer-list{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="review-bar">
+  <span class="review-label">PBS Homepage Concepts — for client review, not final production</span>
+  <div class="review-tabs">
+    <button class="review-tab active" data-tab="editorial">1 · Editorial</button>
+    <button class="review-tab" data-tab="ledger">2 · Ledger</button>
+    <button class="review-tab" data-tab="adventurous">3 · Bold</button>
+  </div>
+</div>
+
+<!-- ============ TAB 1: EDITORIAL ============ -->
+<main id="tab-editorial" class="mockup active">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCACgARUDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAUGAwQHAQII/8QAPhAAAQMDAwIEAgcFBgcAAAAAAQACAwQFEQYSIQcTIjFBURRhCBUjMnGBkRdClKHSFlJVYqKxGDRFU5LBwv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwIFBP/EAC8RAQABAwMDAQYFBQAAAAAAAAABAgMREiExBEFRYRMicYHB8AWRobHhFDNE0fH/2gAMAwEAAhEDEQA/AP1SiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIP/2Q==" alt="Progressive Benefits Solutions"></a>
+      <nav class="main-nav"><ul>
+        <li><a href="#" style="border-bottom-color:var(--maroon);">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">What We Do</a></li>
+        <li><a href="#">Reference Library</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <a class="btn btn-outline btn-sm" href="#">Employer Login</a>
+        <a class="btn btn-primary btn-sm" href="#">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="container hero-copy" style="padding-right:0;">
+        <p class="eyebrow on-dark">Strategic Benefits. Lasting Impact.</p>
+        <h1>Employee benefits, minus the headache.</h1>
+        <p class="lede">For 26 years, Progressive Benefits Solutions has helped employers navigate a complex benefits landscape — with simple solutions and real support.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#">Schedule a Consultation</a>
+          <a class="btn btn-outline-light" href="#">Explore Our Solutions</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-placeholder">Team / portrait photo — client to provide</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stat-row">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat-block"><div class="stat-num">26</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat-block"><div class="stat-num">2,000+</div><div class="stat-label">Employers Supported</div></div>
+        <div class="stat-block"><div class="stat-num">1</div><div class="stat-label">Point of Contact. Always.</div></div>
+      </div>
+      <p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container why-grid">
+      <div>
+        <p class="eyebrow">A Better Way</p>
+        <h2>We make employee benefits simple.</h2>
+        <p style="color:var(--stone);">From plan design and compliance to enrollment and ongoing support, we help you take the headache out of benefits — so you can focus on what matters most: your people and your business.</p>
+        <a class="btn btn-primary btn-sm" href="#">Why PBS</a>
+      </div>
+      <ul class="why-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg>
+          <h4>Expert Guidance</h4><p>Clear advice. No jargon.</p>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9"/><path d="M12 9c0-4-3-6-7-6 0 4 3 7 7 6z"/><path d="M12 13c0-4 3-6 7-6 0 4-3 7-7 6z"/></svg>
+          <h4>Personalized Solutions</h4><p>Plans built around your goals.</p>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg>
+          <h4>Dedicated Support</h4><p>One point of contact. Always.</p>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+          <h4>Long-Term Partnership</h4><p>We're here for what's next.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="what-we-do">
+    <div class="container">
+      <div class="what-we-do-grid">
+        <div>
+          <p class="eyebrow on-dark">What We Do</p>
+          <h2>Benefits that work for your business.</h2>
+        </div>
+        <p class="lede">We don't just sell plans. We build comprehensive benefit programs that attract talent, support your team, and keep your business moving forward.</p>
+      </div>
+      <div class="wwd-card-grid">
+        <div class="wwd-card">
+          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg>
+          <h3>Health &amp; Wellness</h3>
+          <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
+        </div>
+        <div class="wwd-card">
+          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg>
+          <h3>Income Protection</h3>
+          <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
+        </div>
+        <div class="wwd-card">
+          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+          <h3>Compliance &amp; HR</h3>
+          <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
+        </div>
+        <div class="wwd-card">
+          <svg class="icon" style="color:var(--rose);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+          <h3>Extras</h3>
+          <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="container mission-photo">
+      <div class="photo-placeholder">Team photo — client to provide</div>
+    </div>
+    <div class="container">
+      <p class="eyebrow">Our Mission</p>
+      <h2>Real people. Real support.</h2>
+      <p style="color:var(--stone);">We're an independent firm, which means we work for you — not the carriers. Our job is to find the right solutions, provide exceptional service, and be a trusted partner for the long haul.</p>
+      <a class="btn btn-primary btn-sm" href="#">Let's Talk</a>
+    </div>
+  </section>
+
+  <section class="closing-cta">
+    <div class="container flex">
+      <div>
+        <h3>Ready to stop dreading open enrollment?</h3>
+        <p>Tell us about your company and we'll put together options that work for your budget.</p>
+      </div>
+      <a class="btn btn-primary" href="#">Get in Touch →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand"><img src="data:image/jpeg;base64,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" alt="PBS" style="height:36px;"></div>
+      <nav class="footer-nav"><ul>
+        <li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">What We Do</a></li>
+        <li><a href="#">Reference Library</a></li><li><a href="#">Contact</a></li>
+      </ul></nav>
+      <address class="footer-address">338 Haddon Avenue<br>Westmont, NJ 08108<br>856-858-8388</address>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Progressive Benefits Solutions. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a><a href="#">Terms</a></span>
+    </div>
+  </footer>
+</main>
+
+<!-- ============ TAB 2: LEDGER ============ -->
+<main id="tab-ledger" class="mockup">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCACgARUDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAUGAwQHAQII/8QAPhAAAQMDAwIEAgcFBgcAAAAAAQACAwQFEQYSIQcTIjFBURRhCBUjMnGBkRdClKHSFlJVYqKxGDRFU5LBwv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwIFBP/EAC8RAQABAwMDAQYFBQAAAAAAAAABAgMREiExBEFRYRMicYHB8AWRobHhFDNE0fH/2gAMAwEAAhEDEQA/AP1SiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIP/2Q==" alt="Progressive Benefits Solutions"></a>
+      <nav class="main-nav"><ul>
+        <li><a href="#" style="border-bottom-color:var(--maroon);">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">What We Do</a></li>
+        <li><a href="#">Reference Library</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <a class="btn btn-outline btn-sm" href="#">Employer Login</a>
+        <a class="btn btn-primary btn-sm" href="#">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow on-dark">Strategic Benefits. Lasting Impact.</p>
+          <h1>Employee benefits, minus the headache.</h1>
+          <p class="lede">We help employers design, manage and support benefits programs that attract talent, keep teams healthy and make compliance simple.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#">Schedule a Consultation</a>
+            <a class="btn btn-outline-light" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <div class="photo-placeholder">Consultation photo — client to provide</div>
+        </div>
+      </div>
+      <div class="hero-values">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>
+          <p>Independent &amp; Objective</p>
+        </div>
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg>
+          <p>Personalized Solutions</p>
+        </div>
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg>
+          <p>Compliance Made Simple</p>
+        </div>
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+          <p>A Healthier, Stronger Workforce</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="container experience-grid">
+      <div>
+        <p class="eyebrow">Trusted for 26 Years</p>
+        <h2>Experience makes a difference.</h2>
+        <p style="color:var(--stone);">For over two decades, PBS has been a trusted partner to employers across the region. Our hands-on approach, industry expertise and commitment to service set us apart.</p>
+        <a class="text-link" href="#">Our story →</a>
+      </div>
+      <div class="stat-stack">
+        <div class="stat-block"><div class="stat-num">26</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat-block"><div class="stat-num">2,000+</div><div class="stat-label">Employers Supported</div></div>
+        <div class="stat-block"><div class="stat-num">1</div><div class="stat-label">Point of Contact. Always.</div></div>
+      </div>
+    </div>
+    <div class="container"><p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p></div>
+  </section>
+
+  <section class="build">
+    <div class="container">
+      <p class="eyebrow">What We Build</p>
+      <h2>Complete benefit solutions. Built around you.</h2>
+      <p style="color:var(--brown);max-width:60ch;">We create custom benefit programs for every stage of your business, from small teams to large, complex organizations.</p>
+      <div class="card-grid">
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg>
+          <h3>Health &amp; Wellness</h3>
+          <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
+          <a class="text-link" href="#">Learn more →</a>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg>
+          <h3>Income Protection</h3>
+          <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
+          <a class="text-link" href="#">Learn more →</a>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+          <h3>Compliance &amp; HR</h3>
+          <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
+          <a class="text-link" href="#">Learn more →</a>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+          <h3>Extras</h3>
+          <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
+          <a class="text-link" href="#">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="container">
+      <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
+      <cite>— HR Director, Regional Business · sample quote, swap in a real testimonial</cite>
+    </div>
+  </section>
+
+  <section class="carrier-strip">
+    <div class="container">
+      <p class="carrier-note">Carriers we work with — pulled from PBS's current site, confirm the full list before production</p>
+      <div class="carrier-row">
+        <span class="carrier-chip">Aetna</span>
+        <span class="carrier-chip">AmeriHealth</span>
+        <span class="carrier-chip">Cigna</span>
+        <span class="carrier-chip">Horizon BCBSNJ</span>
+        <span class="carrier-chip">Independence Blue Cross</span>
+        <span class="carrier-chip">UnitedHealthcare</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container flex">
+      <div>
+        <p class="eyebrow on-dark">Let's Build a Better</p>
+        <h2>Benefits experience — together.</h2>
+        <p>Tell us about your company and we'll put together options that work for your budget.</p>
+      </div>
+      <a class="btn btn-light" href="#">Get in Touch →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand"><img src="data:image/jpeg;base64,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" alt="PBS" style="height:36px;"></div>
+      <nav class="footer-nav"><ul>
+        <li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">What We Do</a></li>
+        <li><a href="#">Reference Library</a></li><li><a href="#">Contact</a></li>
+      </ul></nav>
+      <address class="footer-address">338 Haddon Avenue<br>Westmont, NJ 08108<br>856-858-8388</address>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Progressive Benefits Solutions. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a><a href="#">Terms</a></span>
+    </div>
+  </footer>
+</main>
+
+<!-- ============ TAB 3: BOLD ============ -->
+<main id="tab-adventurous" class="mockup">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCACgARUDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAUGAwQHAQII/8QAPhAAAQMDAwIEAgcFBgcAAAAAAQACAwQFEQYSIQcTIjFBURRhCBUjMnGBkRdClKHSFlJVYqKxGDRFU5LBwv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwIFBP/EAC8RAQABAwMDAQYFBQAAAAAAAAABAgMREiExBEFRYRMicYHB8AWRobHhFDNE0fH/2gAMAwEAAhEDEQA/AP1SiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIP/2Q==" alt="Progressive Benefits Solutions"></a>
+      <nav class="main-nav"><ul>
+        <li><a href="#" style="border-bottom-color:var(--maroon);">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">What We Do</a></li>
+        <li><a href="#">Reference Library</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <a class="btn btn-outline btn-sm" href="#">Employer Login</a>
+        <a class="btn btn-primary btn-sm" href="#">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Better Benefits. A Stronger Tomorrow.</p>
+        <h1>Employee benefits, minus the headache.</h1>
+        <p class="lede">Progressive Benefits Solutions helps employers create benefit programs that are easy to manage, compliant, and built to support the people who make your business stronger.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#">Schedule a Consultation</a>
+          <a class="text-link" href="#" style="display:inline-flex;align-items:center;gap:8px;">
+            <svg class="icon" style="width:30px;height:30px;margin:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg>
+            Watch Our Story
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-placeholder">Desk / still-life photo — client to provide</div>
+        <div class="stack-list">Healthier<br>People<br><br>Stronger<br>Teams<br><br>A Brighter<br>Tomorrow</div>
+      </div>
+    </div>
+    <div class="container hero-stats">
+      <div class="stat-grid">
+        <div class="stat-block"><div class="stat-num">26</div><div class="stat-label">In Business</div></div>
+        <div class="stat-block"><div class="stat-num">2,000+</div><div class="stat-label">Employers Supported</div></div>
+        <div class="stat-block"><div class="stat-num">1</div><div class="stat-label">Point of Contact. Always.</div></div>
+        <div class="stat-block"><div class="stat-num">100%</div><div class="stat-label">Committed to Your Success</div></div>
+      </div>
+      <p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p>
+    </div>
+  </section>
+
+  <section class="help">
+    <div class="container help-grid">
+      <div>
+        <p class="eyebrow">How We Help</p>
+        <h2>Smart solutions for a complex world.</h2>
+        <p style="color:var(--stone);">We simplify every step — from plan design to enrollment and beyond — so you can focus on running your business with confidence.</p>
+        <a class="btn btn-outline btn-sm" href="#">Explore Our Solutions</a>
+      </div>
+      <ul class="check-list">
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> Personalized benefit programs</li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> Compliance and regulatory support</li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> Dedicated, responsive service</li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg> Long-term partnership</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="container offer-grid">
+      <div class="offer-photo"><div class="photo-placeholder">Team working photo — client to provide</div></div>
+      <div>
+        <p class="eyebrow">What We Offer</p>
+        <h2>A complete benefits partner.</h2>
+        <div class="offer-list">
+          <div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg>
+            <h4>Health &amp; Wellness</h4><p>Medical, dental, vision, wellness benefits</p>
+          </div>
+          <div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg>
+            <h4>Income Protection</h4><p>Life, disability, temporary disability</p>
+          </div>
+          <div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+            <h4>Compliance &amp; HR</h4><p>Section 125, COBRA, HIPAA/ACA, ERISA</p>
+          </div>
+          <div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            <h4>Extras</h4><p>Voluntary benefits, worksite benefits, technology</p>
+          </div>
+        </div>
+        <a class="text-link" href="#" style="display:inline-block;margin-top:20px;">See all solutions →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="container">
+      <blockquote>"Professional, knowledgeable and always available. PBS has been an incredible partner for our business."</blockquote>
+      <cite>— Business Owner · sample quote, swap in a real testimonial</cite>
+    </div>
+  </section>
+
+  <section class="closing-cta">
+    <div class="container flex">
+      <div>
+        <h3>Ready to stop dreading open enrollment?</h3>
+        <p>Tell us about your company and we'll put together options that work for your budget.</p>
+      </div>
+      <a class="btn btn-primary" href="#">Get Started →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand"><img src="data:image/jpeg;base64,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" alt="PBS" style="height:36px;"></div>
+      <nav class="footer-nav"><ul>
+        <li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">What We Do</a></li>
+        <li><a href="#">Reference Library</a></li><li><a href="#">Contact</a></li>
+      </ul></nav>
+      <address class="footer-address">338 Haddon Avenue<br>Westmont, NJ 08108<br>856-858-8388</address>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Progressive Benefits Solutions. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a><a href="#">Terms</a></span>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.querySelectorAll('.review-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.review-tab').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.mockup').forEach(function(m){ m.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      window.scrollTo(0,0);
+    });
+  });
+</script>
+
+</body>
+</html>
