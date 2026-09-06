@@ -143,6 +143,11 @@
   #tab-editorial .brush-accent-light{margin-top:8px;}
   #tab-editorial .mission h2{font-size:clamp(30px,3vw,40px);line-height:1.15;letter-spacing:-.01em;}
 
+  #tab-editorial .carrier-strip{background:var(--paper);padding:64px 0;}
+  #tab-editorial .carrier-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:24px;}
+  #tab-editorial .carrier-chip{font-family:'Frank Ruhl Libre',serif;font-size:15px;color:var(--stone);padding:11px 24px;border:1px solid var(--stone-light);border-radius:24px;background:#fff;transition:transform .2s ease,border-color .2s ease,color .2s ease;}
+  #tab-editorial .carrier-chip:hover{transform:translateY(-3px);border-color:var(--maroon);color:var(--maroon);}
+
   #tab-editorial .closing-cta{background:var(--rose);padding:44px 0;}
   #tab-editorial .closing-cta .flex{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
   #tab-editorial .closing-cta h3{font-size:20px;margin:0 0 4px;}
@@ -407,6 +412,20 @@
           <h3>Extras</h3>
           <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carrier-strip">
+    <div class="container">
+      <p class="eyebrow" style="text-align:center;">Who We Work With</p>
+      <div class="carrier-row reveal">
+        <span class="carrier-chip">Aetna</span>
+        <span class="carrier-chip">AmeriHealth</span>
+        <span class="carrier-chip">Cigna</span>
+        <span class="carrier-chip">Horizon BCBSNJ</span>
+        <span class="carrier-chip">Independence Blue Cross</span>
+        <span class="carrier-chip">United Healthcare</span>
       </div>
     </div>
   </section>
