@@ -208,50 +208,65 @@
     #tab-editorial .wwd-card-grid{grid-template-columns:repeat(2,1fr);}
   }
 
-  /* ===================== TAB 2: LEDGER (Middle reference) ===================== */
-  #tab-ledger .hero{position:relative;background:linear-gradient(120deg,var(--maroon-deep) 0%, var(--brown) 100%);color:var(--paper);overflow:hidden;padding:76px 0 0;}
-  #tab-ledger .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;}
-  #tab-ledger .hero-copy h1{color:var(--paper);font-size:clamp(40px,4.6vw,58px);line-height:1.1;max-width:14ch;}
-  #tab-ledger .hero-copy p.lede{color:var(--stone-light);font-size:18px;max-width:46ch;}
+  /* ===================== TAB 2: LEDGER (Middle reference) — Warm & Approachable ===================== */
+  #tab-ledger{background:var(--paper);}
+  #tab-ledger .hero{position:relative;background:var(--paper);padding:72px 0 0;overflow:hidden;}
+  #tab-ledger .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;position:relative;}
+  #tab-ledger .hero-copy h1{color:var(--ink);font-size:clamp(38px,4.2vw,54px);line-height:1.15;max-width:14ch;}
+  #tab-ledger .hero-copy p.lede{color:var(--stone);font-size:18px;max-width:46ch;}
   #tab-ledger .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
-  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:360px;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);background:var(--ink);}
-  #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--ink);color:var(--stone-light);}
-  #tab-ledger .local-badge{position:absolute;left:24px;bottom:24px;background:var(--maroon);color:#fff;padding:16px 22px;border-radius:10px;box-shadow:0 10px 26px rgba(0,0,0,.28);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;}
+  #tab-ledger .hero-ctas .btn{border-radius:999px;}
+  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:28px;overflow:hidden;background:var(--rose);box-shadow:0 20px 48px rgba(152,1,46,.14);}
+  #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);}
+  #tab-ledger .local-badge{position:absolute;left:20px;bottom:20px;background:var(--maroon);color:#fff;padding:16px 22px;border-radius:20px;box-shadow:0 14px 30px rgba(0,0,0,.18);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;}
   #tab-ledger .local-badge-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
   #tab-ledger .local-badge-main{font-size:22px;font-weight:600;margin-top:2px;}
   #tab-ledger .local-badge-sub{font-size:13px;opacity:.85;margin-top:2px;}
-  #tab-ledger .hero-values{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:44px 0 56px;border-top:1px solid #6a2436;margin-top:44px;}
-  #tab-ledger .hero-values .icon{color:var(--rose);width:34px;height:34px;margin-bottom:10px;}
-  #tab-ledger .hero-values p{color:var(--stone-light);font-size:14.5px;margin:0;}
+  #tab-ledger .hero-values{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:48px 0 64px;border-top:1px solid var(--stone-light);margin-top:48px;}
+  #tab-ledger .hero-values > div{display:flex;flex-direction:column;align-items:flex-start;}
+  #tab-ledger .hero-values .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:12px;}
+  #tab-ledger .hero-values .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;}
+  #tab-ledger .hero-values p{color:var(--ink);font-size:14.5px;font-weight:600;margin:0;}
 
   #tab-ledger .experience{padding:88px 0;}
-  #tab-ledger .experience-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center;}
+  #tab-ledger .experience-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
   #tab-ledger .experience h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
-  #tab-ledger .stat-stack{display:flex;flex-direction:column;gap:26px;}
-  #tab-ledger .stat-stack .stat-num{font-size:40px;}
+  #tab-ledger .stat-stack{display:flex;flex-direction:column;gap:16px;}
+  #tab-ledger .stat-block{background:#fff;border:none;border-radius:20px;padding:20px 26px;display:flex;align-items:baseline;gap:14px;box-shadow:0 8px 20px rgba(0,0,0,.05);min-width:0;transition:transform .2s ease,box-shadow .2s ease;}
+  #tab-ledger .stat-block:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.09);}
+  #tab-ledger .stat-block .stat-num{font-size:32px;color:var(--maroon);font-family:'Frank Ruhl Libre',serif;font-weight:600;}
+  #tab-ledger .stat-block .stat-label{color:var(--stone);font-size:14px;}
 
   #tab-ledger .build{background:var(--rose);padding:88px 0;}
   #tab-ledger .build h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
-  #tab-ledger .build .service-card{background:var(--paper);}
+  #tab-ledger .build .service-card{background:#fff;border:none;border-radius:22px;box-shadow:0 10px 24px rgba(0,0,0,.06);transition:transform .2s ease,box-shadow .2s ease;}
+  #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px rgba(0,0,0,.10);}
+  #tab-ledger .build .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:14px;}
+  #tab-ledger .build .service-card .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;}
 
-  #tab-ledger .testimonial{background:linear-gradient(rgba(36,21,9,.72),rgba(36,21,9,.8)), linear-gradient(135deg,#3a2418,#1c1108);padding:110px 0;text-align:center;}
-  #tab-ledger .testimonial blockquote{font-family:'Frank Ruhl Libre',serif;font-style:italic;font-size:26px;line-height:1.4;color:var(--paper);max-width:52ch;margin:0 auto 20px;}
-  #tab-ledger .testimonial cite{font-style:normal;color:var(--stone-light);font-size:14px;}
+  #tab-ledger .testimonial{background:var(--paper);padding:96px 0;text-align:center;}
+  #tab-ledger .testimonial-card{max-width:640px;margin:0 auto;background:#fff;border-radius:28px;padding:56px 48px;box-shadow:0 16px 36px rgba(0,0,0,.06);}
+  #tab-ledger .testimonial-quote-mark{color:var(--rose);width:40px;height:40px;margin:0 auto 14px;display:block;}
+  #tab-ledger .testimonial blockquote{font-family:'Frank Ruhl Libre',serif;font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);max-width:52ch;margin:0 auto 22px;}
+  #tab-ledger .testimonial-avatar{width:46px;height:46px;border-radius:50%;background:var(--rose);color:var(--maroon-deep);display:flex;align-items:center;justify-content:center;font-family:'Frank Ruhl Libre',serif;font-weight:600;font-size:14px;margin:0 auto 10px;}
+  #tab-ledger .testimonial cite{font-style:normal;color:var(--stone);font-size:14px;display:block;}
 
   #tab-ledger .carrier-strip{background:var(--paper);padding:56px 0;text-align:center;}
   #tab-ledger .carrier-strip .carrier-note{font-size:13px;color:var(--stone);margin-bottom:32px;}
-  #tab-ledger .carrier-row{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;}
-  #tab-ledger .carrier-chip{font-family:'Frank Ruhl Libre',serif;font-size:15px;color:var(--stone);padding:10px 20px;border:1px solid var(--stone-light);border-radius:3px;}
+  #tab-ledger .carrier-row{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;}
+  #tab-ledger .carrier-chip{font-family:'Frank Ruhl Libre',serif;font-size:15px;color:var(--stone);padding:11px 22px;border:1px solid var(--stone-light);border-radius:999px;background:#fff;}
 
-  #tab-ledger .final-cta{background:var(--maroon);color:var(--paper);padding:64px 0;}
-  #tab-ledger .final-cta .flex{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;}
+  #tab-ledger .final-cta{background:var(--paper);padding:0 0 96px;}
+  #tab-ledger .final-cta .flex{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:var(--maroon);color:var(--paper);border-radius:32px;padding:56px 64px;}
   #tab-ledger .final-cta h2{color:var(--paper);font-size:clamp(28px,3vw,36px);margin-bottom:6px;}
   #tab-ledger .final-cta p{color:var(--rose);margin:0;max-width:44ch;}
+  #tab-ledger .final-cta .btn-light{border-radius:999px;}
 
   @media (max-width:900px){
     #tab-ledger .hero-grid, #tab-ledger .experience-grid{grid-template-columns:1fr;}
-    #tab-ledger .hero-photo-wrap{clip-path:none;min-height:260px;margin-top:24px;}
+    #tab-ledger .hero-photo-wrap{min-height:260px;margin-top:24px;}
     #tab-ledger .hero-values{grid-template-columns:repeat(2,1fr);}
+    #tab-ledger .final-cta .flex{padding:40px 28px;border-radius:24px;}
   }
 
   /* ===================== TAB 3: BOLD (Right reference) ===================== */
@@ -520,12 +535,12 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow on-dark">Right Here in South Jersey</p>
+          <p class="eyebrow">Right Here in South Jersey</p>
           <h1>Employee benefits, minus the headache.</h1>
           <p class="lede">We're neighbors, not a call center. Based in Westmont, we help South Jersey employers design benefits programs that attract great people, keep teams healthy, and make compliance simple — with a real person on the phone every time.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#">Schedule a Consultation</a>
-            <a class="btn btn-outline-light" href="#">Learn More</a>
+            <a class="btn btn-outline" href="#">Learn More</a>
           </div>
         </div>
         <div class="hero-photo-wrap">
@@ -539,19 +554,19 @@
       </div>
       <div class="hero-values">
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
           <p>Local &amp; Independent</p>
         </div>
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg></span>
           <p>Personalized Solutions</p>
         </div>
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg></span>
           <p>Compliance Made Simple</p>
         </div>
         <div>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
           <p>A Healthier, Stronger Workforce</p>
         </div>
       </div>
@@ -582,25 +597,25 @@
       <p style="color:var(--brown);max-width:60ch;">Whether you're a five-person shop or a growing team spread across South Jersey, we build benefit programs that fit your business — not a one-size-fits-all package shipped in from out of state.</p>
       <div class="card-grid">
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg></span>
           <h3>Health &amp; Wellness</h3>
           <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg></span>
           <h3>Income Protection</h3>
           <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
           <h3>Compliance &amp; HR</h3>
           <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg></span>
           <h3>Extras</h3>
           <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
           <a class="text-link" href="#">Learn more →</a>
@@ -611,8 +626,12 @@
 
   <section class="testimonial">
     <div class="container">
-      <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
-      <cite>— HR Director, South Jersey Employer · sample quote, swap in a real testimonial</cite>
+      <div class="testimonial-card">
+        <svg class="testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6.16C4.86 8.4 3 11.66 3 15.22c0 3.24 1.98 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7L7.17 6.16zm10 0c-2.3 2.24-4.16 5.5-4.16 9.06 0 3.24 1.97 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7l-1.6-1.5z"/></svg>
+        <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
+        <div class="testimonial-avatar">HR</div>
+        <cite>— HR Director, South Jersey Employer · sample quote, swap in a real testimonial</cite>
+      </div>
     </div>
   </section>
 
