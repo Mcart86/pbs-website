@@ -229,7 +229,8 @@
   #tab-ledger .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
   #tab-ledger .hero-ctas .btn{border-radius:999px;}
   #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:16px;overflow:hidden;background:var(--rose);box-shadow:0 16px 36px rgba(152,1,46,.12);}
-  #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);}
+  #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);flex-direction:column;gap:12px;}
+  #tab-ledger .hero-photo-wrap .photo-placeholder .icon{width:40px;height:40px;opacity:.55;stroke-linecap:round;stroke-linejoin:round;}
   #tab-ledger .local-badge{position:absolute;left:0;bottom:24px;background:var(--maroon);color:#fff;padding:14px 22px 14px 28px;box-shadow:0 14px 30px rgba(0,0,0,.22);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;transform:rotate(-2deg);clip-path:polygon(0 50%,14px 0,100% 0,100% 100%,14px 100%);}
   #tab-ledger .local-badge-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
   #tab-ledger .local-badge-main{font-size:21px;font-weight:600;margin-top:2px;}
@@ -260,7 +261,13 @@
   #tab-ledger .build .card-grid{grid-template-columns:repeat(4,1fr);}
   #tab-ledger .build .service-card{background:#fff;border:1px solid var(--stone-light);border-radius:14px;padding:0 0 24px;overflow:hidden;box-shadow:none;transition:transform .2s ease,box-shadow .2s ease;}
   #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.08);}
-  #tab-ledger .build .service-card-photo{height:140px;background:linear-gradient(135deg,#cfcac2 0%,#a8a29a 100%);margin-bottom:18px;}
+  #tab-ledger .build .service-card-photo{height:140px;background:linear-gradient(135deg,#cfcac2 0%,#a8a29a 100%);margin-bottom:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:rgba(255,255,255,.85);}
+  #tab-ledger .build .service-card-photo .icon{width:30px;height:30px;stroke-linecap:round;stroke-linejoin:round;}
+  #tab-ledger .build .service-card-photo span{font-size:11px;color:rgba(255,255,255,.75);text-align:center;padding:0 12px;}
+  #tab-ledger .build .service-card:nth-child(1) .service-card-photo{background:linear-gradient(135deg,#d8c8c9 0%,#a8797d 100%);}
+  #tab-ledger .build .service-card:nth-child(2) .service-card-photo{background:linear-gradient(135deg,#c9d0c8 0%,#7d967f 100%);}
+  #tab-ledger .build .service-card:nth-child(3) .service-card-photo{background:linear-gradient(135deg,#c8ccd8 0%,#7d879e 100%);}
+  #tab-ledger .build .service-card:nth-child(4) .service-card-photo{background:linear-gradient(135deg,#dcd0b8 0%,#a8916a 100%);}
   #tab-ledger .build .service-card h3,#tab-ledger .build .service-card p,#tab-ledger .build .service-card ul,#tab-ledger .build .service-card .text-link{margin-left:22px;margin-right:22px;}
   #tab-ledger .build .service-card li{padding:3px 0 3px 20px;position:relative;list-style:none;}
   #tab-ledger .build .service-card li::before{content:'';position:absolute;left:0;top:8px;width:10px;height:6px;border-left:2px solid var(--maroon);border-bottom:2px solid var(--maroon);transform:rotate(-45deg);}
@@ -276,8 +283,10 @@
   #tab-ledger .testimonial-arrow:hover{background:rgba(255,255,255,.26);}
   #tab-ledger .testimonial-arrow svg{width:16px;height:16px;}
   #tab-ledger .testimonial-dots{display:flex;gap:8px;}
-  #tab-ledger .testimonial-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);display:block;}
+  #tab-ledger .testimonial-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);display:block;cursor:pointer;}
   #tab-ledger .testimonial-dots span.active{background:#fff;}
+  #tab-ledger .testimonial-slide{display:none;}
+  #tab-ledger .testimonial-slide.active{display:block;}
 
   #tab-ledger .carrier-strip{background:var(--paper);padding:56px 0;text-align:center;}
   #tab-ledger .carrier-strip .carrier-note{font-size:13px;color:var(--stone);margin-bottom:32px;}
@@ -574,7 +583,10 @@
           </div>
         </div>
         <div class="hero-photo-wrap reveal reveal-delay">
-          <div class="photo-placeholder">Consultation photo — client to provide</div>
+          <div class="photo-placeholder">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg>
+            <span>Consultation photo — client to provide</span>
+          </div>
           <div class="local-badge">
             <div class="local-badge-label">Proudly Serving</div>
             <div class="local-badge-main">South Jersey</div>
@@ -628,9 +640,9 @@
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2z"/></svg></span>
           <div class="stat-text"><div class="stat-num" data-count="1">0</div><div class="stat-label">Point of Contact. Always.</div></div>
         </div>
+        <p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p>
       </div>
     </div>
-    <div class="container"><p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p></div>
   </section>
 
   <section class="build">
@@ -640,25 +652,25 @@
       <p style="color:var(--stone);max-width:60ch;">Whether you're a five-person shop or a growing team spread across South Jersey, we build benefit programs that fit your business — not a one-size-fits-all package shipped in from out of state.</p>
       <div class="card-grid reveal">
         <div class="service-card reveal">
-          <div class="service-card-photo"></div>
+          <div class="service-card-photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg><span>Photo: stethoscope / checkup</span></div>
           <h3>Health &amp; Wellness</h3>
           <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card reveal">
-          <div class="service-card-photo"></div>
+          <div class="service-card-photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg><span>Photo: family / protection</span></div>
           <h3>Income Protection</h3>
           <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card reveal">
-          <div class="service-card-photo"></div>
+          <div class="service-card-photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg><span>Photo: signing paperwork</span></div>
           <h3>Compliance &amp; HR</h3>
           <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card reveal">
-          <div class="service-card-photo"></div>
+          <div class="service-card-photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg><span>Photo: team / high-five</span></div>
           <h3>Extras</h3>
           <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
           <a class="text-link" href="#">Learn more →</a>
@@ -671,12 +683,24 @@
     <div class="container">
       <div class="testimonial-card reveal">
         <svg class="testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6.16C4.86 8.4 3 11.66 3 15.22c0 3.24 1.98 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7L7.17 6.16zm10 0c-2.3 2.24-4.16 5.5-4.16 9.06 0 3.24 1.97 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7l-1.6-1.5z"/></svg>
-        <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
-        <cite>— HR Director, South Jersey Employer · sample quote, swap in a real testimonial</cite>
+        <div class="testimonial-slides">
+          <div class="testimonial-slide active">
+            <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
+            <cite>— HR Director, South Jersey Employer · sample quote</cite>
+          </div>
+          <div class="testimonial-slide">
+            <blockquote>"They actually pick up the phone. When we had a claims issue, one call to PBS fixed it same day."</blockquote>
+            <cite>— Office Manager, South Jersey Employer · sample quote</cite>
+          </div>
+          <div class="testimonial-slide">
+            <blockquote>"Open enrollment used to be a nightmare. PBS walks our whole team through it — it's actually easy now."</blockquote>
+            <cite>— Owner, South Jersey Employer · sample quote</cite>
+          </div>
+        </div>
         <div class="testimonial-nav">
-          <button class="testimonial-arrow" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <div class="testimonial-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
-          <button class="testimonial-arrow" aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+          <button class="testimonial-arrow" aria-label="Previous testimonial" data-dir="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="testimonial-dots"><span class="active" data-slide="0"></span><span data-slide="1"></span><span data-slide="2"></span></div>
+          <button class="testimonial-arrow" aria-label="Next testimonial" data-dir="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
         </div>
       </div>
     </div>
@@ -948,6 +972,25 @@
       btn.addEventListener('click', function(){ setTimeout(updateStickyCta, 50); });
     });
     updateStickyCta();
+  })();
+
+  (function(){
+    var card = document.querySelector('#tab-ledger .testimonial-card');
+    if (!card) return;
+    var slides = card.querySelectorAll('.testimonial-slide');
+    var dots = card.querySelectorAll('.testimonial-dots span');
+    var current = 0;
+    function show(index){
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function(s, i){ s.classList.toggle('active', i === current); });
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
+    }
+    card.querySelectorAll('.testimonial-arrow').forEach(function(btn){
+      btn.addEventListener('click', function(){ show(current + parseInt(btn.dataset.dir, 10)); });
+    });
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ show(i); });
+    });
   })();
 </script>
 
