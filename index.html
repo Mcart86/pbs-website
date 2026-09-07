@@ -7,7 +7,7 @@
 <title>PBS Homepage Concepts — Client Review</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:ital,wght@0,400;0,500;0,700;1,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:ital,wght@0,400;0,500;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --maroon:#98012E; --maroon-deep:#5C0A1E; --brown:#3A3B3E; --paper:#FAF8F4;
@@ -223,73 +223,73 @@
   /* ===================== TAB 2: LEDGER (Middle reference) — Warm & Approachable ===================== */
   #tab-ledger{background:var(--paper);}
   #tab-ledger .hero{position:relative;background:var(--paper);padding:72px 0 0;overflow:hidden;}
-  #tab-ledger .hero::before{content:'';position:absolute;top:-140px;right:-90px;width:440px;height:440px;background:var(--rose);opacity:.6;border-radius:63% 37% 54% 46% / 55% 48% 52% 45%;z-index:0;}
-  #tab-ledger .hero::after{content:'';position:absolute;bottom:60px;left:-160px;width:300px;height:300px;background:var(--rose);opacity:.4;border-radius:41% 59% 37% 63% / 59% 41% 59% 41%;z-index:0;}
-  #tab-ledger .hero-grid{position:relative;z-index:1;}
-  #tab-ledger .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;position:relative;}
+  #tab-ledger .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1;}
   #tab-ledger .hero-copy h1{color:var(--ink);font-size:clamp(38px,4.2vw,54px);line-height:1.15;max-width:14ch;}
   #tab-ledger .hero-copy p.lede{color:var(--stone);font-size:18px;max-width:46ch;}
   #tab-ledger .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
   #tab-ledger .hero-ctas .btn{border-radius:999px;}
-  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#f6e9e7 0%,var(--rose) 55%,#e8c9c6 100%);box-shadow:0 20px 48px rgba(152,1,46,.14);z-index:1;}
+  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:16px;overflow:hidden;background:var(--rose);box-shadow:0 16px 36px rgba(152,1,46,.12);}
   #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);}
-  #tab-ledger .local-badge{position:absolute;left:20px;bottom:20px;background:var(--maroon);color:#fff;padding:16px 22px;border-radius:20px;box-shadow:0 14px 30px rgba(152,1,46,.22);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;transform:rotate(-3deg);}
-  #tab-ledger .local-badge-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
-  #tab-ledger .local-badge-main{font-size:22px;font-weight:600;margin-top:2px;}
-  #tab-ledger .local-badge-sub{font-size:13px;opacity:.85;margin-top:2px;}
-  #tab-ledger .hero-values{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:48px 0 64px;border-top:1px solid var(--stone-light);margin-top:48px;}
-  #tab-ledger .hero-values > div{display:flex;flex-direction:column;align-items:flex-start;}
-  #tab-ledger .hero-values .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:12px;}
-  #tab-ledger .hero-values .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;stroke-linecap:round;stroke-linejoin:round;}
+  #tab-ledger .local-badge{position:absolute;left:0;bottom:24px;background:var(--maroon);color:#fff;padding:14px 22px 14px 28px;box-shadow:0 14px 30px rgba(0,0,0,.22);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;transform:rotate(-2deg);clip-path:polygon(0 50%,14px 0,100% 0,100% 100%,14px 100%);}
+  #tab-ledger .local-badge-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
+  #tab-ledger .local-badge-main{font-size:21px;font-weight:600;margin-top:2px;}
+  #tab-ledger .local-badge-sub{font-size:12.5px;opacity:.85;margin-top:2px;}
+  #tab-ledger .hero-values{display:flex;flex-wrap:wrap;column-gap:40px;row-gap:16px;padding:32px 0;border-top:1px solid var(--stone-light);margin-top:40px;}
+  #tab-ledger .hero-values > div{display:flex;flex-direction:row;align-items:center;gap:10px;}
+  #tab-ledger .hero-values .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;border-radius:0;background:none;margin-bottom:0;}
+  #tab-ledger .hero-values .icon{color:var(--maroon);width:22px;height:22px;margin-bottom:0;stroke-linecap:round;stroke-linejoin:round;}
   #tab-ledger .hero-values p{color:var(--ink);font-size:14.5px;font-weight:600;margin:0;}
 
   #tab-ledger .experience{padding:88px 0;}
-  #tab-ledger .experience-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
-  #tab-ledger .experience h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
+  #tab-ledger .experience-grid{display:grid;grid-template-columns:0.85fr 1.05fr 0.85fr;gap:40px;align-items:stretch;}
+  #tab-ledger .experience h2{font-size:clamp(28px,2.8vw,38px);max-width:14ch;}
+  #tab-ledger .experience-photo{position:relative;min-height:280px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#3a1f3d 0%,#7a3b3e 45%,#d98a4a 100%);box-shadow:0 16px 36px rgba(0,0,0,.16);}
+  #tab-ledger .experience-photo .photo-placeholder{position:absolute;inset:0;border:none;background:transparent;color:rgba(255,255,255,.55);}
+  #tab-ledger .experience-photo .script-overlay{position:absolute;top:28px;left:24px;right:24px;z-index:1;font-family:'Caveat',cursive;font-weight:700;font-size:32px;line-height:1.15;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.25);margin:0;}
   #tab-ledger .stat-stack{display:flex;flex-direction:column;gap:16px;}
-  #tab-ledger .stat-block{background:#fff;border:none;border-radius:20px;padding:20px 26px;display:flex;align-items:baseline;gap:14px;box-shadow:0 8px 20px rgba(152,1,46,.07);min-width:0;transition:transform .2s ease,box-shadow .2s ease;}
+  #tab-ledger .stat-block{background:#fff;border:none;border-radius:20px;padding:20px 26px;display:flex;align-items:center;gap:16px;box-shadow:0 8px 20px rgba(152,1,46,.07);min-width:0;transition:transform .2s ease,box-shadow .2s ease;}
   #tab-ledger .stat-block:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(152,1,46,.14);}
+  #tab-ledger .stat-block .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--rose);flex-shrink:0;}
+  #tab-ledger .stat-block .icon-badge .icon{color:var(--maroon);width:20px;height:20px;stroke-linecap:round;stroke-linejoin:round;}
+  #tab-ledger .stat-block .stat-text{display:flex;align-items:baseline;gap:14px;}
   #tab-ledger .stat-block .stat-num{font-size:32px;color:var(--maroon);font-family:'Frank Ruhl Libre',serif;font-weight:600;}
   #tab-ledger .stat-block .stat-label{color:var(--stone);font-size:14px;}
 
-  #tab-ledger .build{background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);padding:88px 0;position:relative;}
-  #tab-ledger .wave-divider{position:relative;height:64px;margin-bottom:-1px;}
-  #tab-ledger .wave-divider svg{display:block;width:100%;height:100%;}
-  #tab-ledger .build h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;color:var(--paper);}
-  #tab-ledger .build .card-grid{grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;}
-  #tab-ledger .build .service-card:nth-child(1){grid-row:1 / 3;display:flex;flex-direction:column;justify-content:center;}
-  #tab-ledger .build .service-card:nth-child(1) .icon-badge{width:64px;height:64px;}
-  #tab-ledger .build .service-card:nth-child(1) .icon{width:28px;height:28px;}
-  #tab-ledger .build .service-card:nth-child(1) h3{font-size:26px;}
-  #tab-ledger .build .service-card:nth-child(2){grid-column:2;grid-row:1;}
-  #tab-ledger .build .service-card:nth-child(3){grid-column:3;grid-row:1;}
-  #tab-ledger .build .service-card:nth-child(4){grid-column:2 / 4;grid-row:2;display:flex;align-items:flex-start;gap:28px;}
-  #tab-ledger .build .service-card:nth-child(4) .icon-badge{margin-bottom:0;flex-shrink:0;}
-  #tab-ledger .build .service-card:nth-child(4) ul{columns:2;column-gap:32px;}
-  #tab-ledger .build .service-card{background:#fff;border:none;border-radius:22px;box-shadow:0 14px 32px rgba(0,0,0,.22);transition:transform .2s ease,box-shadow .2s ease;}
-  #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.28);}
-  #tab-ledger .build .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:14px;}
-  #tab-ledger .build .service-card .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;stroke-linecap:round;stroke-linejoin:round;}
-  #tab-ledger .build .service-card li{padding:4px 0 4px 24px;position:relative;}
-  #tab-ledger .build .service-card li::before{content:'';position:absolute;left:0;top:9px;width:12px;height:7px;border-left:2px solid var(--maroon);border-bottom:2px solid var(--maroon);transform:rotate(-45deg);}
+  #tab-ledger .build{background:var(--paper);padding:80px 0;position:relative;}
+  #tab-ledger .build h2{font-size:clamp(28px,2.8vw,38px);max-width:16ch;}
+  #tab-ledger .build .card-grid{grid-template-columns:repeat(4,1fr);}
+  #tab-ledger .build .service-card{background:#fff;border:1px solid var(--stone-light);border-radius:14px;padding:0 0 24px;overflow:hidden;box-shadow:none;transition:transform .2s ease,box-shadow .2s ease;}
+  #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.08);}
+  #tab-ledger .build .service-card-photo{height:140px;background:linear-gradient(135deg,#cfcac2 0%,#a8a29a 100%);margin-bottom:18px;}
+  #tab-ledger .build .service-card h3,#tab-ledger .build .service-card p,#tab-ledger .build .service-card ul,#tab-ledger .build .service-card .text-link{margin-left:22px;margin-right:22px;}
+  #tab-ledger .build .service-card li{padding:3px 0 3px 20px;position:relative;list-style:none;}
+  #tab-ledger .build .service-card li::before{content:'';position:absolute;left:0;top:8px;width:10px;height:6px;border-left:2px solid var(--maroon);border-bottom:2px solid var(--maroon);transform:rotate(-45deg);}
 
-  #tab-ledger .testimonial{background:var(--paper);padding:110px 0;text-align:center;position:relative;overflow:hidden;}
-  #tab-ledger .testimonial-card{max-width:760px;margin:0 auto;position:relative;}
-  #tab-ledger .testimonial-quote-mark{position:absolute;top:-64px;left:50%;transform:translateX(-50%);color:var(--rose);width:160px;height:160px;z-index:0;opacity:.7;}
-  #tab-ledger .testimonial blockquote{position:relative;z-index:1;font-family:'Frank Ruhl Libre',serif;font-style:italic;font-weight:500;font-size:clamp(24px,3vw,34px);line-height:1.35;color:var(--ink);margin:0 auto 28px;}
+  #tab-ledger .testimonial{background:var(--maroon);padding:80px 0;text-align:center;position:relative;overflow:visible;}
+  #tab-ledger .testimonial-card{max-width:720px;margin:0 auto;position:relative;}
+  #tab-ledger .testimonial-quote-mark{color:rgba(255,255,255,.35);width:36px;height:36px;margin:0 auto 18px;display:block;}
+  #tab-ledger .testimonial blockquote{position:relative;z-index:1;font-family:'Frank Ruhl Libre',serif;font-style:italic;font-weight:500;font-size:clamp(20px,2.4vw,26px);line-height:1.4;color:#fff;margin:0 auto 18px;}
   #tab-ledger .testimonial-avatar{display:none;}
-  #tab-ledger .testimonial cite{position:relative;z-index:1;font-style:normal;color:var(--maroon);font-weight:600;font-size:14px;display:block;}
+  #tab-ledger .testimonial cite{position:relative;z-index:1;font-style:normal;color:var(--rose);font-weight:600;font-size:14px;display:block;margin-bottom:32px;}
+  #tab-ledger .testimonial-nav{display:flex;align-items:center;justify-content:center;gap:24px;}
+  #tab-ledger .testimonial-arrow{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;border:none;cursor:pointer;transition:background .2s ease;}
+  #tab-ledger .testimonial-arrow:hover{background:rgba(255,255,255,.26);}
+  #tab-ledger .testimonial-arrow svg{width:16px;height:16px;}
+  #tab-ledger .testimonial-dots{display:flex;gap:8px;}
+  #tab-ledger .testimonial-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);display:block;}
+  #tab-ledger .testimonial-dots span.active{background:#fff;}
 
   #tab-ledger .carrier-strip{background:var(--paper);padding:56px 0;text-align:center;}
   #tab-ledger .carrier-strip .carrier-note{font-size:13px;color:var(--stone);margin-bottom:32px;}
   #tab-ledger .carrier-row{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;}
   #tab-ledger .carrier-chip{font-family:'Frank Ruhl Libre',serif;font-size:15px;color:var(--stone);padding:11px 22px;border:1px solid var(--stone-light);border-radius:999px;background:#fff;}
 
-  #tab-ledger .final-cta{background:var(--paper);padding:0 0 96px;}
-  #tab-ledger .final-cta .flex{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:var(--maroon);color:var(--paper);border-radius:32px;padding:56px 64px;}
-  #tab-ledger .final-cta h2{color:var(--paper);font-size:clamp(28px,3vw,36px);margin-bottom:6px;}
-  #tab-ledger .final-cta p{color:var(--rose);margin:0;max-width:44ch;}
-  #tab-ledger .final-cta .btn-light{border-radius:999px;}
+  #tab-ledger .final-cta{background:var(--rose);padding:56px 0;}
+  #tab-ledger .final-cta .flex{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;}
+  #tab-ledger .final-cta h2{color:var(--ink);font-size:clamp(26px,2.8vw,32px);margin-bottom:0;}
+  #tab-ledger .final-cta .cta-right{text-align:right;}
+  #tab-ledger .final-cta .cta-note{display:block;color:var(--maroon-deep);font-size:13px;font-weight:600;margin-top:10px;}
+  #tab-ledger .final-cta .btn-light{border-radius:999px;background:var(--maroon);color:#fff;}
 
   @media (max-width:900px){
     #tab-ledger .hero-grid, #tab-ledger .experience-grid{grid-template-columns:1fr;}
@@ -297,12 +297,6 @@
     #tab-ledger .hero-values{grid-template-columns:repeat(2,1fr);}
     #tab-ledger .final-cta .flex{padding:40px 28px;border-radius:24px;}
     #tab-ledger .build .card-grid{grid-template-columns:1fr;}
-    #tab-ledger .build .service-card:nth-child(1),
-    #tab-ledger .build .service-card:nth-child(2),
-    #tab-ledger .build .service-card:nth-child(3),
-    #tab-ledger .build .service-card:nth-child(4){grid-column:auto;grid-row:auto;display:block;}
-    #tab-ledger .build .service-card:nth-child(4) ul{columns:1;}
-    #tab-ledger .build .service-card:nth-child(1) h3{font-size:20px;}
   }
 
   /* ===================== TAB 3: BOLD (Right reference) ===================== */
@@ -611,6 +605,10 @@
 
   <section class="experience">
     <div class="container experience-grid">
+      <div class="experience-photo reveal">
+        <div class="photo-placeholder">Jersey Shore photo — client to provide</div>
+        <p class="script-overlay">Local people.<br>Lasting impact.</p>
+      </div>
       <div class="reveal">
         <p class="eyebrow">Trusted for 26 Years</p>
         <h2>Experience makes a difference.</h2>
@@ -618,65 +616,68 @@
         <a class="text-link" href="#">Our story →</a>
       </div>
       <div class="stat-stack reveal reveal-delay">
-        <div class="stat-block"><div class="stat-num" data-count="26">0</div><div class="stat-label">Years in Business</div></div>
-        <div class="stat-block"><div class="stat-num" data-count="2000" data-suffix="+">0</div><div class="stat-label">Employers Supported</div></div>
-        <div class="stat-block"><div class="stat-num" data-count="1">0</div><div class="stat-label">Point of Contact. Always.</div></div>
+        <div class="stat-block">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+          <div class="stat-text"><div class="stat-num" data-count="26">0</div><div class="stat-label">Years in Business</div></div>
+        </div>
+        <div class="stat-block">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg></span>
+          <div class="stat-text"><div class="stat-num" data-count="2000" data-suffix="+">0</div><div class="stat-label">Employers Supported</div></div>
+        </div>
+        <div class="stat-block">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2z"/></svg></span>
+          <div class="stat-text"><div class="stat-num" data-count="1">0</div><div class="stat-label">Point of Contact. Always.</div></div>
+        </div>
       </div>
     </div>
     <div class="container"><p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p></div>
   </section>
 
-  <div class="wave-divider" style="background:var(--paper);">
-    <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,40 C180,12 360,12 540,30 C720,48 900,48 1080,28 C1260,10 1440,10 1440,10 L1440,64 L0,64 Z" fill="var(--maroon)"></path></svg>
-  </div>
-
   <section class="build">
     <div class="container">
-      <p class="eyebrow on-dark">What We Build</p>
+      <p class="eyebrow">What We Build</p>
       <h2>Complete benefit solutions. Built around you.</h2>
-      <p style="color:var(--rose);max-width:60ch;">Whether you're a five-person shop or a growing team spread across South Jersey, we build benefit programs that fit your business — not a one-size-fits-all package shipped in from out of state.</p>
+      <p style="color:var(--stone);max-width:60ch;">Whether you're a five-person shop or a growing team spread across South Jersey, we build benefit programs that fit your business — not a one-size-fits-all package shipped in from out of state.</p>
       <div class="card-grid reveal">
         <div class="service-card reveal">
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg></span>
+          <div class="service-card-photo"></div>
           <h3>Health &amp; Wellness</h3>
           <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card reveal">
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg></span>
+          <div class="service-card-photo"></div>
           <h3>Income Protection</h3>
           <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card reveal">
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
+          <div class="service-card-photo"></div>
           <h3>Compliance &amp; HR</h3>
           <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
         <div class="service-card reveal">
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg></span>
-          <div class="service-card-body">
-            <h3>Extras</h3>
-            <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
-            <a class="text-link" href="#">Learn more →</a>
-          </div>
+          <div class="service-card-photo"></div>
+          <h3>Extras</h3>
+          <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
+          <a class="text-link" href="#">Learn more →</a>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="wave-divider" style="background:var(--maroon-deep);">
-    <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,24 C180,46 360,46 540,28 C720,10 900,10 1080,26 C1260,42 1440,42 1440,42 L1440,64 L0,64 Z" fill="var(--paper)"></path></svg>
-  </div>
 
   <section class="testimonial">
     <div class="container">
       <div class="testimonial-card reveal">
         <svg class="testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6.16C4.86 8.4 3 11.66 3 15.22c0 3.24 1.98 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7L7.17 6.16zm10 0c-2.3 2.24-4.16 5.5-4.16 9.06 0 3.24 1.97 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7l-1.6-1.5z"/></svg>
         <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
-        <div class="testimonial-avatar">HR</div>
         <cite>— HR Director, South Jersey Employer · sample quote, swap in a real testimonial</cite>
+        <div class="testimonial-nav">
+          <button class="testimonial-arrow" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="testimonial-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+          <button class="testimonial-arrow" aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
       </div>
     </div>
   </section>
@@ -698,11 +699,13 @@
   <section class="final-cta">
     <div class="container flex">
       <div>
-        <p class="eyebrow on-dark">Ready When You Are</p>
+        <p class="eyebrow">Ready When You Are</p>
         <h2>A benefits partner in your backyard.</h2>
-        <p>Tell us about your company — we'll sit down, get to know your team, and put together options that actually fit your budget. No call center, no out-of-state account rep.</p>
       </div>
-      <a class="btn btn-light" href="#">Get in Touch →</a>
+      <div class="cta-right">
+        <a class="btn btn-light" href="#">Get in Touch →</a>
+        <span class="cta-note">No call center. No out-of-state account rep.</span>
+      </div>
     </div>
   </section>
 
