@@ -224,12 +224,15 @@
   /* ===================== TAB 2: LEDGER (Middle reference) — Warm & Approachable ===================== */
   #tab-ledger{background:var(--paper);}
   #tab-ledger .hero{position:relative;background:var(--paper);padding:72px 0 0;overflow:hidden;}
+  #tab-ledger .hero::before{content:'';position:absolute;top:-140px;right:-90px;width:440px;height:440px;background:var(--rose);opacity:.6;border-radius:63% 37% 54% 46% / 55% 48% 52% 45%;z-index:0;}
+  #tab-ledger .hero::after{content:'';position:absolute;bottom:60px;left:-160px;width:300px;height:300px;background:var(--rose);opacity:.4;border-radius:41% 59% 37% 63% / 59% 41% 59% 41%;z-index:0;}
+  #tab-ledger .hero-grid{position:relative;z-index:1;}
   #tab-ledger .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;position:relative;}
   #tab-ledger .hero-copy h1{color:var(--ink);font-size:clamp(38px,4.2vw,54px);line-height:1.15;max-width:14ch;}
   #tab-ledger .hero-copy p.lede{color:var(--stone);font-size:18px;max-width:46ch;}
   #tab-ledger .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
   #tab-ledger .hero-ctas .btn{border-radius:999px;}
-  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:28px;overflow:hidden;background:var(--rose);box-shadow:0 20px 48px rgba(152,1,46,.14);}
+  #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#f6e9e7 0%,var(--rose) 55%,#e8c9c6 100%);box-shadow:0 20px 48px rgba(152,1,46,.14);z-index:1;}
   #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);}
   #tab-ledger .local-badge{position:absolute;left:20px;bottom:20px;background:var(--maroon);color:#fff;padding:16px 22px;border-radius:20px;box-shadow:0 14px 30px rgba(152,1,46,.22);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;}
   #tab-ledger .local-badge-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
@@ -238,7 +241,7 @@
   #tab-ledger .hero-values{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:48px 0 64px;border-top:1px solid var(--stone-light);margin-top:48px;}
   #tab-ledger .hero-values > div{display:flex;flex-direction:column;align-items:flex-start;}
   #tab-ledger .hero-values .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:12px;}
-  #tab-ledger .hero-values .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;}
+  #tab-ledger .hero-values .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;stroke-linecap:round;stroke-linejoin:round;}
   #tab-ledger .hero-values p{color:var(--ink);font-size:14.5px;font-weight:600;margin:0;}
 
   #tab-ledger .experience{padding:88px 0;}
@@ -250,12 +253,16 @@
   #tab-ledger .stat-block .stat-num{font-size:32px;color:var(--maroon);font-family:'Frank Ruhl Libre',serif;font-weight:600;}
   #tab-ledger .stat-block .stat-label{color:var(--stone);font-size:14px;}
 
-  #tab-ledger .build{background:var(--rose);padding:88px 0;}
+  #tab-ledger .build{background:var(--rose);padding:88px 0;position:relative;}
+  #tab-ledger .wave-divider{position:relative;height:64px;margin-bottom:-1px;}
+  #tab-ledger .wave-divider svg{display:block;width:100%;height:100%;}
   #tab-ledger .build h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
   #tab-ledger .build .service-card{background:#fff;border:none;border-radius:22px;box-shadow:0 10px 24px rgba(152,1,46,.08);transition:transform .2s ease,box-shadow .2s ease;}
   #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px rgba(152,1,46,.14);}
   #tab-ledger .build .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:14px;}
-  #tab-ledger .build .service-card .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;}
+  #tab-ledger .build .service-card .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;stroke-linecap:round;stroke-linejoin:round;}
+  #tab-ledger .build .service-card li{padding:4px 0 4px 24px;position:relative;}
+  #tab-ledger .build .service-card li::before{content:'';position:absolute;left:0;top:9px;width:12px;height:7px;border-left:2px solid var(--maroon);border-bottom:2px solid var(--maroon);transform:rotate(-45deg);}
 
   #tab-ledger .testimonial{background:var(--paper);padding:96px 0;text-align:center;}
   #tab-ledger .testimonial-card{max-width:640px;margin:0 auto;background:#fff;border-radius:28px;padding:56px 48px;box-shadow:0 16px 36px rgba(152,1,46,.09);}
@@ -603,6 +610,10 @@
     <div class="container"><p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p></div>
   </section>
 
+  <div class="wave-divider" style="background:var(--paper);">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,40 C180,12 360,12 540,30 C720,48 900,48 1080,28 C1260,10 1440,10 1440,10 L1440,64 L0,64 Z" fill="var(--rose)"></path></svg>
+  </div>
+
   <section class="build">
     <div class="container">
       <p class="eyebrow">What We Build</p>
@@ -636,6 +647,10 @@
       </div>
     </div>
   </section>
+
+  <div class="wave-divider" style="background:var(--rose);">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,24 C180,46 360,46 540,28 C720,10 900,10 1080,26 C1260,42 1440,42 1440,42 L1440,64 L0,64 Z" fill="var(--paper)"></path></svg>
+  </div>
 
   <section class="testimonial">
     <div class="container">
