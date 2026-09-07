@@ -178,6 +178,9 @@
   #tab-editorial .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
   #tab-editorial .reveal.is-visible{opacity:1;transform:translateY(0);}
   #tab-editorial .reveal-delay{transition-delay:.15s;}
+  #tab-ledger .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  #tab-ledger .reveal.is-visible{opacity:1;transform:translateY(0);}
+  #tab-ledger .reveal-delay{transition-delay:.15s;}
 
   /* ---- Hover lift ---- */
   #tab-editorial .stat-block{transition:transform .25s ease,box-shadow .25s ease;}
@@ -188,11 +191,21 @@
   #tab-editorial .wwd-card:hover{transform:translateY(-4px);}
   #tab-editorial .btn{transition:transform .2s ease,box-shadow .2s ease,background .15s ease,color .15s ease,border-color .15s ease;}
   #tab-editorial .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(32,33,36,.16);}
+  #tab-ledger .btn{transition:transform .2s ease,box-shadow .2s ease,background .15s ease,color .15s ease,border-color .15s ease;}
+  #tab-ledger .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(152,1,46,.18);}
+  #tab-ledger .local-badge{transition:transform .25s ease,box-shadow .25s ease;}
+  #tab-ledger .local-badge:hover{transform:translateY(-3px);}
+  #tab-ledger .testimonial-card{transition:transform .3s ease,box-shadow .3s ease;}
+  #tab-ledger .testimonial-card:hover{transform:translateY(-4px);box-shadow:0 22px 44px rgba(152,1,46,.10);}
+  #tab-ledger .carrier-chip{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+  #tab-ledger .carrier-chip:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(152,1,46,.10);border-color:var(--rose);}
 
   @media (prefers-reduced-motion:reduce){
     #tab-editorial .hero-copy>*{animation:none!important;opacity:1!important;}
     #tab-editorial .reveal{opacity:1!important;transform:none!important;transition:none!important;}
     #tab-editorial .stat-block,#tab-editorial .why-list li,#tab-editorial .wwd-card,#tab-editorial .btn{transition:none!important;}
+    #tab-ledger .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+    #tab-ledger .btn,#tab-ledger .local-badge,#tab-ledger .testimonial-card,#tab-ledger .carrier-chip{transition:none!important;}
   }
 
   @media (max-width:900px){
@@ -218,7 +231,7 @@
   #tab-ledger .hero-ctas .btn{border-radius:999px;}
   #tab-ledger .hero-photo-wrap{position:relative;height:100%;min-height:340px;border-radius:28px;overflow:hidden;background:var(--rose);box-shadow:0 20px 48px rgba(152,1,46,.14);}
   #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);}
-  #tab-ledger .local-badge{position:absolute;left:20px;bottom:20px;background:var(--maroon);color:#fff;padding:16px 22px;border-radius:20px;box-shadow:0 14px 30px rgba(0,0,0,.18);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;}
+  #tab-ledger .local-badge{position:absolute;left:20px;bottom:20px;background:var(--maroon);color:#fff;padding:16px 22px;border-radius:20px;box-shadow:0 14px 30px rgba(152,1,46,.22);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;}
   #tab-ledger .local-badge-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
   #tab-ledger .local-badge-main{font-size:22px;font-weight:600;margin-top:2px;}
   #tab-ledger .local-badge-sub{font-size:13px;opacity:.85;margin-top:2px;}
@@ -232,20 +245,20 @@
   #tab-ledger .experience-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
   #tab-ledger .experience h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
   #tab-ledger .stat-stack{display:flex;flex-direction:column;gap:16px;}
-  #tab-ledger .stat-block{background:#fff;border:none;border-radius:20px;padding:20px 26px;display:flex;align-items:baseline;gap:14px;box-shadow:0 8px 20px rgba(0,0,0,.05);min-width:0;transition:transform .2s ease,box-shadow .2s ease;}
-  #tab-ledger .stat-block:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.09);}
+  #tab-ledger .stat-block{background:#fff;border:none;border-radius:20px;padding:20px 26px;display:flex;align-items:baseline;gap:14px;box-shadow:0 8px 20px rgba(152,1,46,.07);min-width:0;transition:transform .2s ease,box-shadow .2s ease;}
+  #tab-ledger .stat-block:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(152,1,46,.14);}
   #tab-ledger .stat-block .stat-num{font-size:32px;color:var(--maroon);font-family:'Frank Ruhl Libre',serif;font-weight:600;}
   #tab-ledger .stat-block .stat-label{color:var(--stone);font-size:14px;}
 
   #tab-ledger .build{background:var(--rose);padding:88px 0;}
   #tab-ledger .build h2{font-size:clamp(30px,3.2vw,42px);max-width:14ch;}
-  #tab-ledger .build .service-card{background:#fff;border:none;border-radius:22px;box-shadow:0 10px 24px rgba(0,0,0,.06);transition:transform .2s ease,box-shadow .2s ease;}
-  #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px rgba(0,0,0,.10);}
+  #tab-ledger .build .service-card{background:#fff;border:none;border-radius:22px;box-shadow:0 10px 24px rgba(152,1,46,.08);transition:transform .2s ease,box-shadow .2s ease;}
+  #tab-ledger .build .service-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px rgba(152,1,46,.14);}
   #tab-ledger .build .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--rose);margin-bottom:14px;}
   #tab-ledger .build .service-card .icon{color:var(--maroon);width:24px;height:24px;margin-bottom:0;}
 
   #tab-ledger .testimonial{background:var(--paper);padding:96px 0;text-align:center;}
-  #tab-ledger .testimonial-card{max-width:640px;margin:0 auto;background:#fff;border-radius:28px;padding:56px 48px;box-shadow:0 16px 36px rgba(0,0,0,.06);}
+  #tab-ledger .testimonial-card{max-width:640px;margin:0 auto;background:#fff;border-radius:28px;padding:56px 48px;box-shadow:0 16px 36px rgba(152,1,46,.09);}
   #tab-ledger .testimonial-quote-mark{color:var(--rose);width:40px;height:40px;margin:0 auto 14px;display:block;}
   #tab-ledger .testimonial blockquote{font-family:'Frank Ruhl Libre',serif;font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);max-width:52ch;margin:0 auto 22px;}
   #tab-ledger .testimonial-avatar{width:46px;height:46px;border-radius:50%;background:var(--rose);color:var(--maroon-deep);display:flex;align-items:center;justify-content:center;font-family:'Frank Ruhl Libre',serif;font-weight:600;font-size:14px;margin:0 auto 10px;}
@@ -534,7 +547,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy reveal">
           <p class="eyebrow">Right Here in South Jersey</p>
           <h1>Employee benefits, minus the headache.</h1>
           <p class="lede">We're neighbors, not a call center. Based in Westmont, we help South Jersey employers design benefits programs that attract great people, keep teams healthy, and make compliance simple — with a real person on the phone every time.</p>
@@ -543,7 +556,7 @@
             <a class="btn btn-outline" href="#">Learn More</a>
           </div>
         </div>
-        <div class="hero-photo-wrap">
+        <div class="hero-photo-wrap reveal reveal-delay">
           <div class="photo-placeholder">Consultation photo — client to provide</div>
           <div class="local-badge">
             <div class="local-badge-label">Proudly Serving</div>
@@ -552,7 +565,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-values">
+      <div class="hero-values reveal reveal-delay">
         <div>
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
           <p>Local &amp; Independent</p>
@@ -575,16 +588,16 @@
 
   <section class="experience">
     <div class="container experience-grid">
-      <div>
+      <div class="reveal">
         <p class="eyebrow">Trusted for 26 Years</p>
         <h2>Experience makes a difference.</h2>
         <p style="color:var(--stone);">For over two decades, we've walked South Jersey employers through open enrollment, compliance headaches, and everything in between — right from our office on Haddon Avenue. Call us and you'll get the same familiar voice every time, not a rotating call center.</p>
         <a class="text-link" href="#">Our story →</a>
       </div>
-      <div class="stat-stack">
-        <div class="stat-block"><div class="stat-num">26</div><div class="stat-label">Years in Business</div></div>
-        <div class="stat-block"><div class="stat-num">2,000+</div><div class="stat-label">Employers Supported</div></div>
-        <div class="stat-block"><div class="stat-num">1</div><div class="stat-label">Point of Contact. Always.</div></div>
+      <div class="stat-stack reveal reveal-delay">
+        <div class="stat-block"><div class="stat-num" data-count="26">0</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat-block"><div class="stat-num" data-count="2000" data-suffix="+">0</div><div class="stat-label">Employers Supported</div></div>
+        <div class="stat-block"><div class="stat-num" data-count="1">0</div><div class="stat-label">Point of Contact. Always.</div></div>
       </div>
     </div>
     <div class="container"><p class="stat-note">Sample figures shown for layout — confirm real numbers before production.</p></div>
@@ -595,26 +608,26 @@
       <p class="eyebrow">What We Build</p>
       <h2>Complete benefit solutions. Built around you.</h2>
       <p style="color:var(--brown);max-width:60ch;">Whether you're a five-person shop or a growing team spread across South Jersey, we build benefit programs that fit your business — not a one-size-fits-all package shipped in from out of state.</p>
-      <div class="card-grid">
-        <div class="service-card">
+      <div class="card-grid reveal">
+        <div class="service-card reveal">
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.5-9C.7 7.4 2.7 4 6 4c2 0 3.5 1.1 4.3 2.4C11.1 5.1 12.6 4 14.6 4 17.9 4 19.9 7.4 18 11c-2.3 4.6-9.5 9-9.5 9z"/></svg></span>
           <h3>Health &amp; Wellness</h3>
           <ul><li>Medical (ACA/Level)</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
-        <div class="service-card">
+        <div class="service-card reveal">
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c5 0 9 3.6 9 8H3c0-4.4 4-8 9-8z"/><path d="M12 3v15"/><path d="M12 18a2 2 0 0 1-4 0"/></svg></span>
           <h3>Income Protection</h3>
           <ul><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
-        <div class="service-card">
+        <div class="service-card reveal">
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
           <h3>Compliance &amp; HR</h3>
           <ul><li>Section 125 plans</li><li>HR compliance</li><li>COBRA/HIPAA/ACA</li><li>ERISA guidance</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
-        <div class="service-card">
+        <div class="service-card reveal">
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg></span>
           <h3>Extras</h3>
           <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
@@ -626,7 +639,7 @@
 
   <section class="testimonial">
     <div class="container">
-      <div class="testimonial-card">
+      <div class="testimonial-card reveal">
         <svg class="testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6.16C4.86 8.4 3 11.66 3 15.22c0 3.24 1.98 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7L7.17 6.16zm10 0c-2.3 2.24-4.16 5.5-4.16 9.06 0 3.24 1.97 5.44 4.4 5.44 2.14 0 3.7-1.7 3.7-3.84 0-2-1.34-3.5-3.14-3.5-.33 0-.6.04-.7.08.24-2.44 2.28-5.3 4.5-6.7l-1.6-1.5z"/></svg>
         <blockquote>"PBS treats us like part of our own HR team — not just another vendor running renewal paperwork."</blockquote>
         <div class="testimonial-avatar">HR</div>
@@ -818,7 +831,7 @@
   });
 
   (function(){
-    var revealEls = document.querySelectorAll('#tab-editorial .reveal');
+    var revealEls = document.querySelectorAll('#tab-editorial .reveal, #tab-ledger .reveal');
     if (!revealEls.length) return;
 
     function animateCount(el){
@@ -863,7 +876,7 @@
 
   (function(){
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var buttons = document.querySelectorAll('#tab-editorial .btn');
+    var buttons = document.querySelectorAll('#tab-editorial .btn, #tab-ledger .btn');
     var maxPull = 7;
     buttons.forEach(function(btn){
       btn.addEventListener('mousemove', function(e){
