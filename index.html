@@ -247,6 +247,8 @@
   #tab-ledger .experience h2{font-size:clamp(28px,2.8vw,38px);line-height:1.15;letter-spacing:-0.01em;max-width:14ch;}
   #tab-ledger .experience-photo{position:relative;min-height:280px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#3a1f3d 0%,#7a3b3e 45%,#d98a4a 100%);box-shadow:0 2px 4px rgba(0,0,0,.10),0 16px 36px rgba(0,0,0,.16),0 40px 60px -20px rgba(0,0,0,.18);}
   #tab-ledger .experience-photo .photo-placeholder{position:absolute;inset:0;border:none;background:transparent;color:rgba(255,255,255,.55);}
+  #tab-ledger .experience-photo .headshot-placeholder{flex-direction:column;gap:12px;}
+  #tab-ledger .experience-photo .headshot-placeholder .icon{width:56px;height:56px;color:rgba(255,255,255,.4);}
   #tab-ledger .experience-photo .script-overlay{position:absolute;top:28px;left:24px;right:24px;z-index:1;font-family:'Caveat',cursive;font-weight:700;font-size:32px;line-height:1.15;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.25);margin:0;}
   #tab-ledger .stat-stack{display:flex;flex-direction:column;gap:16px;}
   #tab-ledger .stat-block{background:#fff;border:none;border-radius:20px;padding:20px 26px;display:flex;align-items:center;gap:16px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 20px rgba(152,1,46,.07),0 24px 40px -12px rgba(152,1,46,.10);min-width:0;transition:transform .2s ease,box-shadow .2s ease;}
@@ -624,7 +626,10 @@
   <section class="experience">
     <div class="container experience-grid">
       <div class="experience-photo reveal">
-        <div class="photo-placeholder">Jersey Shore photo — client to provide</div>
+        <div class="photo-placeholder headshot-placeholder">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.6 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <span>Headshot — client to provide</span>
+        </div>
         <p class="script-overlay">Local people.<br>Lasting impact.</p>
       </div>
       <div class="reveal">
