@@ -336,7 +336,9 @@
   #tab-adventurous .bold-nav-cta{background:var(--ink);color:var(--paper)!important;font-size:14.5px;font-weight:700;padding:11px 20px;border-radius:2px;transition:background 200ms cubic-bezier(.2,.8,.2,1);}
   #tab-adventurous .bold-nav-cta:hover{background:var(--maroon);color:#fff!important;}
 
-  #tab-adventurous .bold-hero{max-width:1240px;margin:0 auto;padding:64px 28px 0;}
+  #tab-adventurous .bold-hero{max-width:1240px;margin:0 auto;padding:64px 28px 0;position:relative;}
+  #tab-adventurous .bold-hero::before{content:"";position:absolute;top:0;right:0;width:60%;height:100%;background-image:radial-gradient(rgba(32,33,36,.08) 1.5px,transparent 1.5px);background-size:28px 28px;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(to left,#000 0%,transparent 75%);mask-image:linear-gradient(to left,#000 0%,transparent 75%);}
+  #tab-adventurous .bold-hero>*{position:relative;z-index:1;}
   #tab-adventurous .bold-eyebrow-row{display:flex;align-items:center;gap:14px;padding-bottom:24px;border-bottom:1px solid rgba(32,33,36,.18);}
   #tab-adventurous .bold-eyebrow-row .bold-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);}
   #tab-adventurous .bold-eyebrow-row .bold-rule{flex:1;height:1px;background:rgba(32,33,36,.18);}
@@ -886,7 +888,7 @@
       <span class="bold-rule"></span>
       <span class="bold-est">Est. April 2000</span>
     </div>
-    <h1 class="bold-h1">Benefits are<br>complicated.<br><em>Your broker<br>shouldn't be.</em></h1>
+    <h1 class="bold-h1">Benefits are complicated.<br><em>Your broker shouldn't be.</em></h1>
     <div class="bold-intro-row">
       <p>Progressive Benefits Solutions builds and runs employee benefit programs for companies from ten employees to a few thousand. We research the market, negotiate the rates, run the enrollment, and then answer the phone when a claim goes wrong.</p>
       <div class="bold-cta-col">
