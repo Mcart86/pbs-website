@@ -236,11 +236,10 @@
   #tab-ledger .local-badge-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
   #tab-ledger .local-badge-main{font-size:21px;font-weight:600;margin-top:2px;}
   #tab-ledger .local-badge-sub{font-size:12.5px;opacity:.85;margin-top:2px;}
-  #tab-ledger .hero-values{display:flex;flex-wrap:wrap;column-gap:40px;row-gap:16px;padding:32px 0;border-top:1px solid var(--stone-light);margin-top:40px;}
+  #tab-ledger .hero-values{background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);margin-top:40px;}
+  #tab-ledger .hero-values-inner{display:flex;flex-wrap:wrap;column-gap:40px;row-gap:16px;padding:28px 40px;}
   #tab-ledger .hero-values > div{display:flex;flex-direction:row;align-items:center;gap:10px;}
-  #tab-ledger .hero-values .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;border-radius:0;background:none;margin-bottom:0;}
-  #tab-ledger .hero-values .icon{color:var(--maroon);width:22px;height:22px;margin-bottom:0;stroke-linecap:round;stroke-linejoin:round;}
-  #tab-ledger .hero-values p{color:var(--ink);font-size:14.5px;font-weight:600;margin:0;}
+  #tab-ledger .hero-values p{color:#fff;font-size:14.5px;font-weight:600;margin:0;}
 
   #tab-ledger .experience{padding:88px 0;}
   #tab-ledger .experience-grid{display:grid;grid-template-columns:0.85fr 1.05fr 0.85fr;gap:40px;align-items:stretch;}
@@ -599,21 +598,19 @@
           </div>
         </div>
       </div>
-      <div class="hero-values reveal reveal-delay">
+    </div>
+    <div class="hero-values reveal reveal-delay">
+      <div class="container hero-values-inner">
         <div>
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
           <p>Local &amp; Independent</p>
         </div>
         <div>
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.4 5.5 2.5 5.5 5.8"/></svg></span>
           <p>Personalized Solutions</p>
         </div>
         <div>
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/></svg></span>
           <p>Compliance Made Simple</p>
         </div>
         <div>
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
           <p>A Healthier, Stronger Workforce</p>
         </div>
       </div>
