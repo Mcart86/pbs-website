@@ -376,17 +376,28 @@
   #tab-adventurous .bold-services-head h2{font-size:clamp(30px,4vw,52px);line-height:1.03;letter-spacing:-.035em;font-weight:800;max-width:20ch;text-wrap:balance;}
   #tab-adventurous .bold-services-head p{margin:0;font-family:'Newsreader',serif;font-size:18px;line-height:1.5;color:rgba(32,33,36,.7);max-width:38ch;}
   #tab-adventurous .bold-service-grid{display:grid;grid-template-columns:repeat(2,1fr);}
-  #tab-adventurous .bold-service-card{background:#fff;padding:38px 32px 44px;display:flex;flex-direction:column;gap:16px;border-right:1px solid rgba(32,33,36,.14);border-bottom:1px solid rgba(32,33,36,.14);transition:background 200ms cubic-bezier(.2,.8,.2,1);}
+  #tab-adventurous .bold-service-card{background:#fff;padding:38px 32px 44px;display:flex;flex-direction:column;gap:16px;border-right:1px solid rgba(32,33,36,.14);border-bottom:1px solid rgba(32,33,36,.14);transition:background 200ms cubic-bezier(.2,.8,.2,1);position:relative;}
   #tab-adventurous .bold-service-card:nth-child(2n){border-right:none;}
   #tab-adventurous .bold-service-card:nth-last-child(-n+2):nth-child(2n),
   #tab-adventurous .bold-service-card:nth-last-child(-n+2):nth-child(2n+1){border-bottom:none;}
+  #tab-adventurous .bold-service-watermark{position:absolute;right:24px;bottom:8px;font-size:130px;font-weight:800;letter-spacing:-.05em;line-height:1;color:rgba(32,33,36,.05);pointer-events:none;z-index:0;}
+  #tab-adventurous .bold-service-card>*{position:relative;z-index:1;}
+  #tab-adventurous .bold-service-card:nth-child(1)::after,
+  #tab-adventurous .bold-service-card:nth-child(2)::after{content:"";position:absolute;left:32px;bottom:-21px;width:2px;height:42px;background:var(--maroon);z-index:5;}
+  #tab-adventurous .bold-service-card:nth-child(4){border-left:3px solid var(--maroon);padding-left:29px;}
+  @media (max-width:640px){
+    #tab-adventurous .bold-service-card:nth-child(1)::after,
+    #tab-adventurous .bold-service-card:nth-child(2)::after{display:none;}
+    #tab-adventurous .bold-service-card:nth-child(4){border-left:none;padding-left:32px;border-top:3px solid var(--maroon);}
+  }
   @media (max-width:640px){
     #tab-adventurous .bold-service-grid{grid-template-columns:1fr;}
     #tab-adventurous .bold-service-card{border-right:none!important;border-bottom:1px solid rgba(32,33,36,.14)!important;}
     #tab-adventurous .bold-service-card:last-child{border-bottom:none!important;}
   }
   #tab-adventurous .bold-service-card:hover{background:#faf7f1;}
-  #tab-adventurous .bold-service-num{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--maroon);}
+  #tab-adventurous .bold-service-num{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--maroon);display:inline-block;align-self:flex-start;padding:4px 8px;transition:background 200ms cubic-bezier(.2,.8,.2,1),color 200ms cubic-bezier(.2,.8,.2,1);margin-left:-8px;}
+  #tab-adventurous .bold-service-card:hover .bold-service-num{background:var(--maroon);color:#fff;}
   #tab-adventurous .bold-service-card h3{font-size:23px;line-height:1.15;letter-spacing:-.02em;font-weight:700;}
   #tab-adventurous .bold-service-card p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(32,33,36,.72);}
   #tab-adventurous .bold-service-points{margin:8px 0 0;padding-top:18px;border-top:1px solid rgba(32,33,36,.12);list-style:none;display:flex;flex-direction:column;gap:9px;}
@@ -935,7 +946,7 @@
       </div>
       <div class="bold-service-grid">
         <div class="bold-service-card">
-          <span class="bold-service-num">01</span>
+          <span class="bold-service-num">01</span><span class="bold-service-watermark" aria-hidden="true">01</span>
           <h3>Market research and plan design</h3>
           <p>We shop the full marketplace every year, not just the incumbent's renewal, and model what each option does to your budget and your employees' paychecks.</p>
           <ul class="bold-service-points">
@@ -946,7 +957,7 @@
           </ul>
         </div>
         <div class="bold-service-card">
-          <span class="bold-service-num">02</span>
+          <span class="bold-service-num">02</span><span class="bold-service-watermark" aria-hidden="true">02</span>
           <h3>Cost offset for high deductibles</h3>
           <p>High-deductible plans move risk onto your employees. We pair them with funding mechanisms that absorb the difference without blowing up the premium line.</p>
           <ul class="bold-service-points">
@@ -957,7 +968,7 @@
           </ul>
         </div>
         <div class="bold-service-card">
-          <span class="bold-service-num">03</span>
+          <span class="bold-service-num">03</span><span class="bold-service-watermark" aria-hidden="true">03</span>
           <h3>Implementation and enrollment</h3>
           <p>When you switch carriers, we run it. Documents, meetings, and open enrollment are ours to manage, not another project on your desk.</p>
           <ul class="bold-service-points">
@@ -968,7 +979,7 @@
           </ul>
         </div>
         <div class="bold-service-card">
-          <span class="bold-service-num">04</span>
+          <span class="bold-service-num">04</span><span class="bold-service-watermark" aria-hidden="true">04</span>
           <h3>The year after the sale</h3>
           <p>Billing reconciliation, denied claims, appeals, and the confidential employee question nobody wants to ask HR. This is where the relationship is actually earned.</p>
           <ul class="bold-service-points">
