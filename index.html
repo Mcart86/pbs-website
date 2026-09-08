@@ -375,8 +375,16 @@
   #tab-adventurous .bold-services-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:56px;}
   #tab-adventurous .bold-services-head h2{font-size:clamp(30px,4vw,52px);line-height:1.03;letter-spacing:-.035em;font-weight:800;max-width:20ch;text-wrap:balance;}
   #tab-adventurous .bold-services-head p{margin:0;font-family:'Newsreader',serif;font-size:18px;line-height:1.5;color:rgba(32,33,36,.7);max-width:38ch;}
-  #tab-adventurous .bold-service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));}
+  #tab-adventurous .bold-service-grid{display:grid;grid-template-columns:repeat(2,1fr);}
   #tab-adventurous .bold-service-card{background:#fff;padding:38px 32px 44px;display:flex;flex-direction:column;gap:16px;border-right:1px solid rgba(32,33,36,.14);border-bottom:1px solid rgba(32,33,36,.14);transition:background 200ms cubic-bezier(.2,.8,.2,1);}
+  #tab-adventurous .bold-service-card:nth-child(2n){border-right:none;}
+  #tab-adventurous .bold-service-card:nth-last-child(-n+2):nth-child(2n),
+  #tab-adventurous .bold-service-card:nth-last-child(-n+2):nth-child(2n+1){border-bottom:none;}
+  @media (max-width:640px){
+    #tab-adventurous .bold-service-grid{grid-template-columns:1fr;}
+    #tab-adventurous .bold-service-card{border-right:none!important;border-bottom:1px solid rgba(32,33,36,.14)!important;}
+    #tab-adventurous .bold-service-card:last-child{border-bottom:none!important;}
+  }
   #tab-adventurous .bold-service-card:hover{background:#faf7f1;}
   #tab-adventurous .bold-service-num{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--maroon);}
   #tab-adventurous .bold-service-card h3{font-size:23px;line-height:1.15;letter-spacing:-.02em;font-weight:700;}
