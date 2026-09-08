@@ -108,7 +108,7 @@
   #tab-editorial .hero-copy p.lede{color:var(--stone-light);font-size:18px;max-width:44ch;}
   #tab-editorial .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
   #tab-editorial .hero-photo{position:relative;background:var(--brown);}
-  #tab-editorial .hero-photo .photo-placeholder{position:absolute;inset:0;border:none;}
+  #tab-editorial .hero-photo .photo-placeholder{position:absolute;inset:0;border:none;flex-direction:column;gap:10px;}
 
   #tab-editorial .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;padding:88px 0;}
   #tab-editorial .why-grid h2{font-size:clamp(30px,3vw,40px);max-width:15ch;line-height:1.15;letter-spacing:-.01em;}
@@ -511,7 +511,10 @@
         </div>
       </div>
       <div class="hero-photo">
-        <div class="photo-placeholder">Team / portrait photo — client to provide</div>
+        <div class="photo-placeholder">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Team / portrait photo — client to provide</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1100,7 +1103,7 @@
           <h2>Bring us your renewal.</h2>
           <p>Send us what you have in place today. In twenty minutes we'll tell you where you're overpaying, where you're exposed, and whether we can do better. If we can't, we'll say so.</p>
           <div class="bold-contact-links">
-            <a href="tel:+12015550142" class="bold-contact-phone">(201) 555-0142</a>
+            <a href="tel:+18568588388" class="bold-contact-phone">856-858-8388</a>
             <a href="mailto:info@progbenefits.com" class="bold-contact-email">info@progbenefits.com</a>
           </div>
         </div>
