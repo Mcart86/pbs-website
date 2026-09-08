@@ -237,9 +237,10 @@
   #tab-ledger .local-badge-main{font-size:21px;font-weight:600;margin-top:2px;}
   #tab-ledger .local-badge-sub{font-size:12.5px;opacity:.85;margin-top:2px;}
   #tab-ledger .hero-values{background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);margin-top:40px;}
-  #tab-ledger .hero-values-inner{display:flex;flex-wrap:wrap;justify-content:center;column-gap:40px;row-gap:16px;padding:28px 40px;}
+  #tab-ledger .hero-values-inner{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:16px;row-gap:16px;padding:28px 40px;}
   #tab-ledger .hero-values > div{display:flex;flex-direction:row;align-items:center;gap:10px;}
-  #tab-ledger .hero-values p{color:#fff;font-size:14.5px;font-weight:600;margin:0;}
+  #tab-ledger .hero-values .value-sep{color:rgba(255,255,255,.45);font-size:16px;}
+  #tab-ledger .hero-values p{color:#fff;font-size:16px;font-weight:600;margin:0;}
 
   #tab-ledger .experience{padding:88px 0;}
   #tab-ledger .experience-grid{display:grid;grid-template-columns:0.85fr 1.05fr 0.85fr;gap:40px;align-items:stretch;}
@@ -604,12 +605,15 @@
         <div>
           <p>Local &amp; Independent</p>
         </div>
+        <span class="value-sep">•</span>
         <div>
           <p>Personalized Solutions</p>
         </div>
+        <span class="value-sep">•</span>
         <div>
           <p>Compliance Made Simple</p>
         </div>
+        <span class="value-sep">•</span>
         <div>
           <p>A Healthier, Stronger Workforce</p>
         </div>
