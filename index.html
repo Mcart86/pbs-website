@@ -62,6 +62,12 @@
   .stat-num{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:44px;color:var(--maroon);line-height:1;margin-bottom:6px;}
   .stat-label{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);font-weight:600;}
   .stat-note{font-size:12px;color:var(--stone);margin-top:18px;font-style:italic;}
+  #tab-editorial .credentials-band{background:var(--rose);padding:38px 0;}
+  #tab-editorial .credentials-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px;}
+  #tab-editorial .credential-item{display:flex;align-items:center;gap:14px;max-width:280px;}
+  #tab-editorial .credential-icon{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 4px 10px rgba(152,1,46,.12);}
+  #tab-editorial .credential-icon .icon{width:23px;height:23px;color:var(--maroon);margin-bottom:0;}
+  #tab-editorial .credential-item span:last-child{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.35;}
 
   /* ---- Shared 4-card service grid ---- */
   .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:44px;}
@@ -278,6 +284,12 @@
   #tab-ledger .stat-block .icon-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--rose);flex-shrink:0;}
   #tab-ledger .stat-block .icon-badge .icon{color:var(--maroon);width:20px;height:20px;stroke-linecap:round;stroke-linejoin:round;}
   #tab-ledger .stat-block .stat-text{display:flex;align-items:baseline;gap:14px;}
+  #tab-ledger .credentials-band{background:var(--paper);padding:44px 0;}
+  #tab-ledger .credentials-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;}
+  #tab-ledger .credential-item{display:flex;align-items:center;gap:16px;max-width:290px;background:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 20px rgba(152,1,46,.07);}
+  #tab-ledger .credential-icon{width:44px;height:44px;border-radius:10px;background:var(--rose);display:flex;align-items:center;justify-content:center;flex:none;}
+  #tab-ledger .credential-icon .icon{width:22px;height:22px;color:var(--maroon);margin-bottom:0;}
+  #tab-ledger .credential-item span:last-child{font-size:14px;font-weight:700;color:var(--ink);line-height:1.35;}
   #tab-ledger .stat-block .stat-num{font-size:32px;color:var(--maroon);font-family:'Frank Ruhl Libre',serif;font-weight:600;}
   #tab-ledger .stat-block .stat-label{color:var(--stone);font-size:14px;}
 
@@ -382,6 +394,11 @@
 
   #tab-adventurous .bold-stats{background:var(--ink);color:var(--paper);}
   #tab-adventurous .bold-stats-grid{max-width:1240px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-left:1px solid rgba(250,248,244,.16);}
+  #tab-adventurous .bold-credentials{background:var(--rose);border-bottom:1px solid rgba(32,33,36,.14);}
+  #tab-adventurous .bold-credentials-inner{max-width:1240px;margin:0 auto;padding:32px 28px;display:flex;flex-wrap:wrap;justify-content:center;gap:36px;}
+  #tab-adventurous .bold-credential-item{display:flex;align-items:center;gap:14px;max-width:290px;}
+  #tab-adventurous .bold-credential-item .icon{width:28px;height:28px;color:var(--maroon);flex:none;margin-bottom:0;}
+  #tab-adventurous .bold-credential-item span{font-size:14px;font-weight:700;color:var(--ink);line-height:1.35;}
   #tab-adventurous .bold-stat{padding:44px 28px 46px;border-right:1px solid rgba(250,248,244,.16);}
   #tab-adventurous .bold-stat-num{font-size:clamp(40px,5vw,68px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--paper);white-space:nowrap;}
   #tab-adventurous .bold-stat-num.is-compact{font-size:clamp(30px,3.4vw,46px);}
@@ -596,6 +613,23 @@
         <div class="stat-block"><div class="stat-num" data-count="1">0</div><div class="stat-label">Point of Contact. Always.</div></div>
       </div>
       <p class="stat-note">All figures confirmed by the client.</p>
+    </div>
+  </section>
+
+  <section class="credentials-band">
+    <div class="container credentials-grid">
+      <div class="credential-item">
+        <span class="credential-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span>Member, National Association of Benefit Professionals (NABIP)</span>
+      </div>
+      <div class="credential-item">
+        <span class="credential-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.5l2.9 6 6.6.6-5 4.4 1.5 6.5-6-3.6-6 3.6 1.5-6.5-5-4.4 6.6-.6z"/></svg></span>
+        <span>NABIP Rising Star Award</span>
+      </div>
+      <div class="credential-item">
+        <span class="credential-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h10v3.5a5 5 0 0 1-10 0V4z"/><path d="M7 4.5H4.5A2.5 2.5 0 0 0 7 8M17 4.5h2.5A2.5 2.5 0 0 1 17 8"/><path d="M12 12.5v3.5M9 20h6M9.5 16h5v1.5a2.5 2.5 0 0 1-5 0V16z"/></svg></span>
+        <span>Gloucester County Chamber of Commerce &mdash; Member of the Year</span>
+      </div>
     </div>
   </section>
 
@@ -840,6 +874,23 @@
     </div>
   </section>
 
+  <section class="credentials-band">
+    <div class="container credentials-grid">
+      <div class="credential-item">
+        <span class="credential-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span>Member, National Association of Benefit Professionals (NABIP)</span>
+      </div>
+      <div class="credential-item">
+        <span class="credential-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.5l2.9 6 6.6.6-5 4.4 1.5 6.5-6-3.6-6 3.6 1.5-6.5-5-4.4 6.6-.6z"/></svg></span>
+        <span>NABIP Rising Star Award</span>
+      </div>
+      <div class="credential-item">
+        <span class="credential-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h10v3.5a5 5 0 0 1-10 0V4z"/><path d="M7 4.5H4.5A2.5 2.5 0 0 0 7 8M17 4.5h2.5A2.5 2.5 0 0 1 17 8"/><path d="M12 12.5v3.5M9 20h6M9.5 16h5v1.5a2.5 2.5 0 0 1-5 0V16z"/></svg></span>
+        <span>Gloucester County Chamber of Commerce &mdash; Member of the Year</span>
+      </div>
+    </div>
+  </section>
+
   <section class="build">
     <div class="container">
       <p class="eyebrow">What We Build</p>
@@ -1001,6 +1052,23 @@
       <div class="bold-stat"><div class="bold-stat-num">24hr</div><div class="bold-stat-label">Turnaround on any service request</div></div>
       <div class="bold-stat"><div class="bold-stat-num is-compact">15&#8211;100+</div><div class="bold-stat-label">Employees per group, small to corporate</div></div>
       <div class="bold-stat"><div class="bold-stat-num">1</div><div class="bold-stat-label">Person who knows your plan, on the phone</div></div>
+    </div>
+  </section>
+
+  <section class="bold-credentials">
+    <div class="bold-credentials-inner reveal">
+      <div class="bold-credential-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span>Member, National Association of Benefit Professionals (NABIP)</span>
+      </div>
+      <div class="bold-credential-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.5l2.9 6 6.6.6-5 4.4 1.5 6.5-6-3.6-6 3.6 1.5-6.5-5-4.4 6.6-.6z"/></svg>
+        <span>NABIP Rising Star Award</span>
+      </div>
+      <div class="bold-credential-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h10v3.5a5 5 0 0 1-10 0V4z"/><path d="M7 4.5H4.5A2.5 2.5 0 0 0 7 8M17 4.5h2.5A2.5 2.5 0 0 1 17 8"/><path d="M12 12.5v3.5M9 20h6M9.5 16h5v1.5a2.5 2.5 0 0 1-5 0V16z"/></svg>
+        <span>Gloucester County Chamber of Commerce &mdash; Member of the Year</span>
+      </div>
     </div>
   </section>
 
