@@ -312,6 +312,12 @@
   #tab-ledger .build .service-card li{padding:3px 0 3px 20px;position:relative;list-style:none;}
   #tab-ledger .build .service-card li::before{content:'';position:absolute;left:0;top:8px;width:10px;height:6px;border-left:2px solid var(--maroon);border-bottom:2px solid var(--maroon);transform:rotate(-45deg);}
 
+  #tab-ledger .ledger-compliance{background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);padding:88px 0;}
+  #tab-ledger .ledger-compliance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center;}
+  #tab-ledger .ledger-compliance-grid h2{font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:10px 0 16px;}
+  #tab-ledger .ledger-compliance-tags{display:flex;flex-wrap:wrap;gap:10px;}
+  #tab-ledger .ledger-compliance-tags span{border:1px solid rgba(255,255,255,.45);padding:11px 18px;font-size:14.5px;font-weight:700;letter-spacing:-.01em;color:#fff;font-family:'Public Sans',sans-serif;transition:all .2s ease;}
+  #tab-ledger .ledger-compliance-tags span:hover{background:#fff;color:var(--maroon);}
   #tab-ledger .testimonial{background:var(--maroon);padding:80px 0;text-align:center;position:relative;overflow:visible;}
   #tab-ledger .testimonial::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend-mode:overlay;pointer-events:none;}
   #tab-ledger .testimonial-card{max-width:720px;margin:0 auto;position:relative;}
@@ -922,6 +928,26 @@
           <ul><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
           <a class="text-link" href="#">Learn more →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ledger-compliance">
+    <div class="container ledger-compliance-grid">
+      <div class="reveal">
+        <p class="eyebrow" style="color:var(--rose);">Compliance</p>
+        <h2 style="color:#fff;">The acronyms you'd rather not become an expert in.</h2>
+        <p style="color:rgba(255,255,255,.85);max-width:48ch;">We track the federal and New Jersey rules that govern your plan and tell you, in plain language, what changed and what you have to do about it — so it's never a surprise.</p>
+      </div>
+      <div class="ledger-compliance-tags reveal reveal-delay">
+        <span>ACA</span>
+        <span>COBRA</span>
+        <span>ERISA</span>
+        <span>HIPAA</span>
+        <span>FMLA</span>
+        <span>Section 125</span>
+        <span>NJ Continuation</span>
+        <span>Dependent Laws</span>
       </div>
     </div>
   </section>
