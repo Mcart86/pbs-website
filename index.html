@@ -258,6 +258,7 @@
     #tab-ledger .reveal{opacity:1!important;transform:none!important;transition:none!important;}
     #tab-adventurous .reveal{opacity:1!important;transform:none!important;transition:none!important;}
     #tab-ledger .btn,#tab-ledger .local-badge,#tab-ledger .testimonial-card,#tab-ledger .carrier-chip{transition:none!important;}
+    #tab-ledger .local-badge{animation:none!important;}
   }
 
   @media (max-width:900px){
@@ -292,7 +293,8 @@
   #tab-ledger .hero-photo-wrap .hero-photo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.12) brightness(0.98);}
   #tab-ledger .hero-photo-wrap .photo-placeholder{position:absolute;inset:0;border:none;background:var(--rose);color:var(--maroon-deep);flex-direction:column;gap:12px;}
   #tab-ledger .hero-photo-wrap .photo-placeholder .icon{width:40px;height:40px;opacity:.55;stroke-linecap:round;stroke-linejoin:round;}
-  #tab-ledger .local-badge{position:absolute;left:38%;bottom:100px;background:var(--maroon);color:#fff;padding:14px 22px 14px 28px;box-shadow:0 2px 6px rgba(0,0,0,.18),0 14px 30px rgba(0,0,0,.22),0 28px 44px -14px rgba(0,0,0,.20);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;transform:rotate(-2deg);clip-path:polygon(0 50%,14px 0,100% 0,100% 100%,14px 100%);}
+  #tab-ledger .local-badge{position:absolute;right:36px;bottom:36px;left:auto;background:var(--maroon);color:#fff;padding:14px 22px 14px 28px;box-shadow:0 2px 6px rgba(0,0,0,.18),0 14px 30px rgba(0,0,0,.22),0 28px 44px -14px rgba(0,0,0,.20);z-index:2;font-family:'Frank Ruhl Libre',serif;line-height:1.15;transform:rotate(-2deg);clip-path:polygon(0 50%,14px 0,100% 0,100% 100%,14px 100%);animation:badgeFloat 4.5s ease-in-out infinite;}
+  @keyframes badgeFloat{0%,100%{transform:rotate(-2deg) translateY(0);}50%{transform:rotate(-2deg) translateY(-8px);}}
   #tab-ledger .local-badge-label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;font-family:'Public Sans',sans-serif;font-weight:600;}
   #tab-ledger .local-badge-main{font-size:21px;font-weight:600;margin-top:2px;}
   #tab-ledger .local-badge-sub{font-size:12.5px;opacity:.85;margin-top:2px;}
@@ -420,7 +422,7 @@
     #tab-ledger .footer-script-text{text-align:left;}
     #tab-ledger .hero-photo-wrap{min-height:340px;margin-top:24px;}
     #tab-ledger .hero-stack-words{display:none;}
-    #tab-ledger .local-badge{left:24px;bottom:90px;}
+    #tab-ledger .local-badge{right:20px;bottom:80px;left:auto;}
     #tab-ledger .hero-photo-wrap .script-overlay{bottom:24px;left:24px;font-size:24px;}
     #tab-ledger .hero-values{grid-template-columns:repeat(2,1fr);}
     #tab-ledger .final-cta .flex{padding:40px 28px;border-radius:24px;}
