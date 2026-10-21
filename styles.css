@@ -810,3 +810,12 @@ a[href^="mailto:"]:not(.btn),a[href^="tel:"]:not(.btn){display:inline-block;padd
 .lg-body a{color:var(--maroon);font-weight:600;}
 .lg-address{font-style:normal;font-size:16.5px;line-height:1.8;}
 @media(max-width:700px){.lg-toc ol{columns:1;}.lg-section{padding:36px 0 56px;}}
+
+/* Footer badges */
+.footer-badges{display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding-top:26px;padding-bottom:26px;padding-left:40px;padding-right:40px;border-top:1px solid rgba(255,255,255,.18);}
+.footer-badge{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:6px;padding:10px 20px;height:68px;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:transform .2s ease,box-shadow .2s ease;}
+a.footer-badge:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.26);}
+.footer-badge img{display:block;height:44px;width:auto;max-width:100%;}
+.footer-badge-aca{height:auto;padding:8px 22px;}
+.footer-badge-aca img{height:80px;}
+@media(max-width:700px){.footer-badges{padding-left:20px;padding-right:20px;}}
