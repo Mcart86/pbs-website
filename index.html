@@ -1171,6 +1171,9 @@
   .ab-photo-left::before{inset:16px 16px -16px -16px;}
   .ab-industry .ab-photo img{object-position:50% 62%;}
   @media(max-width:900px){.ab-grid-flip{grid-template-columns:1fr;}}
+  .ab-fig{margin:0;}
+  .ab-caption{margin-top:30px;display:flex;align-items:center;gap:12px;font:500 14px/1.4 'Public Sans',sans-serif;letter-spacing:.02em;color:var(--stone);}
+  .ab-caption::before{content:"";flex:none;width:28px;height:1px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 7s ease-in-out infinite alternate;}
 </style>
 </head>
 <body>
@@ -2167,9 +2170,12 @@
 
   <section class="ab-section ab-industry ab-sep">
     <div class="container ab-grid ab-grid-flip">
-      <div class="ab-photo ab-photo-left">
-        <img src="images/nabip-brokers-making-a-difference.webp" alt="Members of NABIP wearing &ldquo;Brokers Making a Difference&rdquo; hoodies at an industry event" loading="lazy">
-      </div>
+      <figure class="ab-fig">
+        <div class="ab-photo ab-photo-left">
+          <img src="images/nabip-brokers-making-a-difference.webp" alt="Members of NABIP wearing &ldquo;Brokers Making a Difference&rdquo; hoodies at an industry event" loading="lazy">
+        </div>
+        <figcaption class="ab-caption">National Association of Benefit Professionals 2025 Capitol Conference</figcaption>
+      </figure>
       <div class="ab-copy">
         <p class="eyebrow">Part of the Industry</p>
         <h2>Proud members of NABIP.</h2>
@@ -2782,7 +2788,7 @@
     var src = document.querySelector('#tab-ledger .hero-photo-img');
     main.querySelectorAll('img[data-from]').forEach(function(img){ if (src) img.src = src.src; });
     function mark(el, d){ el.classList.add('rv'); if (d) el.style.setProperty('--d', d + 's'); }
-    main.querySelectorAll('.ab-copy,.ab-photo,.ab-lead,.ab-callout .container,.ab-cta-inner').forEach(function(el){ mark(el, 0); });
+    main.querySelectorAll('.ab-copy,.ab-photo,.ab-caption,.ab-lead,.ab-callout .container,.ab-cta-inner').forEach(function(el){ mark(el, 0); });
     main.querySelectorAll('.ab-approach .container > .eyebrow,.ab-approach .container > h2').forEach(function(el){ mark(el, 0); });
     main.querySelectorAll('.ab-tile').forEach(function(el,i){ mark(el, i * 0.09); });
     var els = main.querySelectorAll('.rv');
