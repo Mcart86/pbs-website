@@ -869,6 +869,43 @@
   #tab-services .svc-cta p{color:var(--stone);}
   #tab-services .svc-cta .eyebrow{color:var(--maroon);}
   @media(max-width:800px){.svc-row{grid-template-columns:1fr;gap:28px;padding:40px 0;}.svc-row:nth-child(even) .svc-photo{order:0;}.svc-photo img{height:240px;}.svc-list{grid-template-columns:1fr;}}
+
+  /* ================= Shimmering gold accent system ================= */
+  :root{--gold-grad:linear-gradient(100deg,#946D2C 0%,#C5A04B 20%,#EDD28C 38%,#BC9440 55%,#9E7A38 75%,#DDBC68 90%,#946D2C 100%);}
+  @keyframes goldX{from{background-position-x:0%;}to{background-position-x:100%;}}
+  /* lines */
+  #tab-ledger .carrier-rule,#tab-services .svc-rule,
+  #tab-services .svc-benefits-head .eyebrow::after,#tab-services .pbs-services-band .eyebrow::after,#tab-services .why-section .eyebrow::after,#tab-services .addl-head .eyebrow::after,#tab-services .carriers-head .eyebrow::after{background:var(--gold-grad);background-size:300% 100%;animation:goldX 7s ease-in-out infinite alternate;}
+  #tab-ledger .footer-top-v2,#tab-library .footer-top-v2,#tab-services .footer-top-v2{border-bottom:0;background:var(--gold-grad) 0 100%/300% 1px no-repeat;animation:goldX 9s ease-in-out infinite alternate;}
+  #tab-ledger .stat-label-v2{border-top:0;background:var(--gold-grad) 0 0/300% 2px no-repeat;animation:goldX 8s ease-in-out infinite alternate;}
+  #tab-ledger .site-header,#tab-library .site-header,#tab-services .site-header{border-bottom-color:transparent;position:relative;}
+  #tab-ledger .site-header::after,#tab-library .site-header::after,#tab-services .site-header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 9s ease-in-out infinite alternate;}
+  #tab-library .lib-hero::after,#tab-services .lib-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 8s ease-in-out infinite alternate;}
+  #tab-services .svc-jump{border-bottom-color:transparent;}
+  #tab-services .svc-jump::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 9s ease-in-out infinite alternate;}
+  #tab-services .svc-row{border-bottom:0;position:relative;}
+  #tab-services .svc-row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 9s ease-in-out infinite alternate;}
+  #tab-services .svc-row:last-child::after{display:none;}
+  #tab-services .svc-cta{border-top:0;position:relative;}
+  #tab-services .svc-cta::before{display:block;top:0;height:2px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 8s ease-in-out infinite alternate;}
+  /* card top bar */
+  .lib-card{position:relative;border-top:1px solid var(--stone-light);}
+  .lib-card::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:3px;border-radius:4px 4px 0 0;background:var(--gold-grad);background-size:300% 100%;animation:goldX 8s ease-in-out infinite alternate;}
+  /* ring borders (keep radius, work on any background) */
+  #tab-ledger .btn,#tab-services .btn,#tab-library .btn,#tab-ledger .newsletter-section-btn,#tab-services .addl-toggle{position:relative;border-color:transparent;}
+  #tab-ledger .btn::after,#tab-services .btn::after,#tab-library .btn::after,#tab-ledger .newsletter-section-btn::after,#tab-services .addl-toggle::after,
+  #tab-services .svc-photo::before,#tab-ledger .build .service-icon::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:var(--gold-grad);background-size:300% 100%;animation:goldX 6s ease-in-out infinite alternate;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+  #tab-services .svc-photo::before{border:0;padding:1.5px;}
+  #tab-services .svc-photo::before{inset:16px -16px -16px 16px;}
+  #tab-services .svc-row:nth-child(even) .svc-photo::before{inset:16px 16px -16px -16px;}
+  #tab-services .svc-row:hover .svc-photo::before{inset:9px -9px -9px 9px;}
+  #tab-services .svc-row:nth-child(even):hover .svc-photo::before{inset:9px 9px -9px -9px;}
+  #tab-services .addl-toggle{background:#fff;}
+  #tab-ledger .build .service-icon{position:relative;border-color:transparent;}
+  #tab-services .carrier-logo:hover{border-color:#D6B56B;}
+  /* shimmering numerals */
+  #tab-services .svc-num,#tab-services .why-num{background:var(--gold-grad);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:goldX 8s ease-in-out infinite alternate;}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;}}
 </style>
 </head>
 <body>
