@@ -738,7 +738,7 @@
 
   /* ---- Services page ---- */
   .svc-body{padding:24px 0 40px;}
-  .svc-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0;border-bottom:1px solid var(--stone-light);scroll-margin-top:84px;}
+  .svc-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:48px 0;border-bottom:1px solid var(--stone-light);scroll-margin-top:calc(var(--rb-h,64px) + 76px);}
   .svc-row:last-child{border-bottom:none;}
   .svc-row:nth-child(even) .svc-photo{order:2;}
   .svc-photo img{width:100%;height:340px;object-fit:cover;border-radius:4px;display:block;}
@@ -757,19 +757,7 @@
 
   /* ---- Services page: extra sections ---- */
   .grp-section,.addl-section,.why-section{padding:72px 0;}
-  .grp-section{background:#fff;border-top:1px solid var(--stone-light);}
   .grp-section h2,.addl-section h2,.why-section h2,.pbs-services-band h2{font-size:clamp(26px,3vw,36px);line-height:1.15;margin:0 0 28px;}
-  .grp-chips{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
-  .grp-chips li{border:1px solid var(--stone-light);border-left:3px solid var(--gold);border-radius:4px;padding:14px 18px;font-weight:600;font-size:15.5px;background:var(--paper);}
-  .addl-grid{column-count:3;column-gap:22px;}
-  .addl-grid .addl-card{break-inside:avoid;margin-bottom:22px;}
-  @media(max-width:1000px){.addl-grid{column-count:2;}}
-  @media(max-width:650px){.addl-grid{column-count:1;}}
-  .addl-card{background:#fff;border:1px solid var(--stone-light);border-top:3px solid var(--maroon);border-radius:4px;padding:26px 24px;}
-  .addl-card h3{font-size:21px;margin:0 0 12px;}
-  .addl-card ul{list-style:none;margin:0;padding:0;}
-  .addl-card li{position:relative;padding:5px 0 5px 20px;font-size:15px;color:var(--ink);}
-  .addl-card li::before{content:"";position:absolute;left:0;top:.95em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
   .pbs-services-band{background:var(--rose);padding:72px 0;}
   .pbs-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
   .pbs-service{background:rgba(255,255,255,.6);border-radius:4px;padding:26px 22px;}
@@ -779,6 +767,49 @@
   .why-card{background:#fff;border:1px solid var(--stone-light);border-radius:4px;padding:28px 26px;}
   .why-num{display:block;font:500 34px/1 'Frank Ruhl Libre',serif;color:var(--gold);margin-bottom:12px;}
   .why-card p{margin:0;font-size:16px;}
+
+  /* ---- Services page: tighten + scannable ---- */
+  #tab-services section[id]{scroll-margin-top:calc(var(--rb-h,64px) + 74px);}
+  .svc-hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;}
+  .svc-btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7);}
+  .svc-btn-ghost:hover{background:#fff;color:var(--maroon);}
+  .svc-jump{position:sticky;top:var(--rb-h,64px);z-index:150;background:var(--paper);border-bottom:1px solid var(--stone-light);}
+  .svc-jump-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:10px;padding-bottom:10px;}
+  .svc-jump-links{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+  .svc-jump-links a{white-space:nowrap;padding:9px 16px;border-radius:999px;font:600 14.5px 'Public Sans',sans-serif;color:var(--ink);text-decoration:none;border:1px solid transparent;}
+  .svc-jump-links a:hover{border-color:var(--stone-light);background:#fff;}
+  .svc-jump-links a.is-active{background:var(--maroon);color:#fff;}
+  .svc-jump-cta{padding:10px 20px;font-size:14px;flex:none;}
+  .svc-benefits-head{padding-top:56px;}
+  .svc-benefits-head h2{font-size:clamp(26px,3vw,36px);line-height:1.15;margin:0;}
+  .svc-body{padding:0 0 24px;}
+  .pbs-services-band{padding:48px 0;}
+  .pbs-services-band h2{margin-bottom:22px;}
+  .why-section{padding:56px 0;background:#fff;border-top:1px solid var(--stone-light);}
+  .why-section h2{margin-bottom:22px;}
+  .why-card{background:var(--paper);padding:22px 22px;}
+  .why-num{font-size:28px;margin-bottom:8px;}
+  .why-card p{font-size:15.5px;}
+  .svc-mid-cta{background:var(--rose);padding:30px 0;}
+  .svc-mid-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .svc-mid-inner p{margin:0;font-size:17px;max-width:62ch;}
+  .addl-section{background:#fff;padding:56px 0 64px;}
+  .addl-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px;}
+  .addl-head h2{margin:0;}
+  .addl-toggle{font:600 14px 'Public Sans',sans-serif;color:var(--maroon);background:none;border:1px solid var(--maroon);border-radius:4px;padding:10px 18px;cursor:pointer;}
+  .addl-toggle:hover{background:var(--maroon);color:#fff;}
+  .addl-acc{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+  .addl-item{background:var(--paper);border:1px solid var(--stone-light);border-left:3px solid var(--maroon);border-radius:4px;}
+  .addl-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:18px 20px;}
+  .addl-item summary::-webkit-details-marker{display:none;}
+  .addl-title{font:500 20px/1.25 'Frank Ruhl Libre',serif;flex:1;}
+  .addl-count{font-size:13px;color:var(--stone);}
+  .addl-chev{width:10px;height:10px;border-right:2px solid var(--maroon);border-bottom:2px solid var(--maroon);transform:rotate(45deg);transition:transform .18s;margin:0 4px 4px 0;}
+  .addl-item[open] .addl-chev{transform:rotate(-135deg);margin:4px 4px 0 0;}
+  .addl-item ul{list-style:none;margin:0;padding:0 20px 18px;}
+  .addl-item li{position:relative;padding:5px 0 5px 20px;font-size:15px;}
+  .addl-item li::before{content:"";position:absolute;left:0;top:.95em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  @media(max-width:800px){.addl-acc{grid-template-columns:1fr;}.svc-jump-cta{display:none;}}
   @media(max-width:800px){.svc-row{grid-template-columns:1fr;gap:28px;padding:40px 0;}.svc-row:nth-child(even) .svc-photo{order:0;}.svc-photo img{height:240px;}.svc-list{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -1645,10 +1676,37 @@
       <p class="eyebrow">What We Offer</p>
       <h1>Complete benefit solutions. Built around you.</h1>
       <p class="lib-intro">Whether you're a five-person shop or a growing team spread across South Jersey, we build benefit programs that fit your business &mdash; not a one-size-fits-all package shipped in from out of state.</p>
+      <div class="svc-hero-cta"><a class="btn btn-light" href="#">Schedule a Consultation</a><a class="btn svc-btn-ghost" href="tel:+18568588388">Call 856-858-8388</a></div>
     </div>
   </section>
-  <section class="svc-body">
+  <nav class="svc-jump" aria-label="On this page">
+    <div class="container svc-jump-inner">
+      <div class="svc-jump-links">
+        <a href="#svc-commit" data-scroll="svc-commit">PBS Services</a>
+        <a href="#svc-why" data-scroll="svc-why">Why PBS</a>
+        <a href="#svc-benefits" data-scroll="svc-benefits">Benefits</a>
+        <a href="#svc-additional" data-scroll="svc-additional">Additional Services</a>
+      </div>
+      <a class="btn btn-primary svc-jump-cta" href="#">Schedule a Consultation</a>
+    </div>
+  </nav>
+  <section class="pbs-services-band" id="svc-commit">
     <div class="container">
+      <p class="eyebrow">PBS Services</p>
+      <h2>Support that doesn&rsquo;t stop at enrollment.</h2>
+      <div class="pbs-services-grid"><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>24-hour service request turnaround</p></div><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>Billing and claims reconciliation</p></div><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>Assistance with employee enrollment meetings</p></div><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>Help with resolutions for billing and claims issues</p></div></div>
+    </div>
+  </section>
+  <section class="why-section" id="svc-why">
+    <div class="container">
+      <p class="eyebrow">Why PBS?</p>
+      <h2>An extension of your HR team.</h2>
+      <div class="why-grid"><div class="why-card"><span class="why-num">01</span><p>We research the marketplace to find the best benefits program for your company.</p></div><div class="why-card"><span class="why-num">02</span><p>We act as an extension of your HR department, advising on benefits-related laws such as COBRA, HIPAA, FMLA, the NJ Continuation of Coverage, and the NJ Over Age 30 Dependent Law.</p></div><div class="why-card"><span class="why-num">03</span><p>Our expertise in offsetting employee liability in high-deductible health plans with cost-sharing funding mechanisms.</p></div><div class="why-card"><span class="why-num">04</span><p>We&rsquo;re responsive to our clients&rsquo; financial needs and accommodate their investment inquiries.</p></div><div class="why-card"><span class="why-num">05</span><p>We understand our clients&rsquo; needs and work within their budget for the most cost-effective employee benefits.</p></div><div class="why-card"><span class="why-num">06</span><p>We understand that great employee benefits contribute to higher employee retention.</p></div></div>
+    </div>
+  </section>
+  <section class="svc-body" id="svc-benefits">
+    <div class="container">
+      <div class="svc-benefits-head"><p class="eyebrow">Benefits We Offer</p><h2>Coverage built around your team.</h2></div>
       <article class="svc-row" id="svc-health">
         <div class="svc-photo"><img data-from="1" src="" alt=""></div>
         <div class="svc-text">
@@ -1687,33 +1745,19 @@
       </article>
     </div>
   </section>
-  
-  <section class="grp-section">
-    <div class="container">
-      <p class="eyebrow">Group Benefits Offered</p>
-      <h2>Everything your team needs, in one place.</h2>
-      <ul class="grp-chips"><li>Dental</li><li>Health &ndash; HRA / HSA</li><li>Human Resources &ndash; Compliance</li><li>Life</li><li>Long-Term Disability</li><li>Section 125 Cafeteria Plans</li><li>Short-Term Disability</li><li>Temporary Disability Benefits</li><li>Vision</li><li>Voluntary Benefits</li><li>Wellness Benefits</li><li>Worksite Benefits</li></ul>
+  <section class="svc-mid-cta">
+    <div class="container svc-mid-inner">
+      <p><strong>Not sure which coverage fits your team?</strong> Tell us about your business and we&rsquo;ll point you in the right direction.</p>
+      <a class="btn btn-primary" href="#">Schedule a Consultation</a>
     </div>
   </section>
-  <section class="addl-section">
+  <section class="addl-section" id="svc-additional">
     <div class="container">
-      <p class="eyebrow">Additional Services</p>
-      <h2>More than just the plan.</h2>
-      <div class="addl-grid"><div class="addl-card"><h3>Benefit Plan Analysis</h3><ul><li>Compare language and plan features</li><li>Review current programs and alternate programs</li><li>Recommend options, if any</li><li>Negotiate benefits &amp; cost</li><li>Review limitations and exclusions</li><li>Contract flexibility</li><li>Employee contribution strategy</li><li>Negotiate plan, benefits, and rates</li><li>Target marketing</li></ul></div><div class="addl-card"><h3>Implementation</h3><ul><li>Oversee and recommend action to new carrier(s)</li><li>Work with carrier representatives</li><li>Conduct enrollment meetings</li><li>Oversee the open enrollment process</li><li>Review all plan documents</li><li>Review all employee booklets and/or certificates</li></ul></div><div class="addl-card"><h3>Claims Handling</h3><ul><li>Appeal</li><li>Analysis of claim payment</li><li>Timely submission</li></ul></div><div class="addl-card"><h3>Financials</h3><ul><li>Overall rate analysis</li><li>True cost analysis</li><li>Alternate funding methods</li></ul></div><div class="addl-card"><h3>Individual Products</h3><ul><li>Disability</li><li>Medical</li><li>Life</li></ul></div><div class="addl-card"><h3>Reference Check</h3><ul><li>Interview policyholders of similar size and industry of recommended carriers</li></ul></div><div class="addl-card"><h3>Other</h3><ul><li>ARRA</li><li>COBRA</li><li>HIPAA compliance</li><li>HRA/HSA administration</li><li>NJ Continuation</li><li>Dependent to age 31</li></ul></div></div>
-    </div>
-  </section>
-  <section class="pbs-services-band">
-    <div class="container">
-      <p class="eyebrow">PBS Services</p>
-      <h2>Support that doesn&rsquo;t stop at enrollment.</h2>
-      <div class="pbs-services-grid"><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>24-hour service request turnaround</p></div><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>Billing and claims reconciliation</p></div><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>Assistance with employee enrollment meetings</p></div><div class="pbs-service"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg><p>Help with resolutions for billing and claims issues</p></div></div>
-    </div>
-  </section>
-  <section class="why-section">
-    <div class="container">
-      <p class="eyebrow">Why PBS?</p>
-      <h2>An extension of your HR team.</h2>
-      <div class="why-grid"><div class="why-card"><span class="why-num">01</span><p>We research the marketplace to find the best benefits program for your company.</p></div><div class="why-card"><span class="why-num">02</span><p>We act as an extension of your HR department, advising on benefits-related laws such as COBRA, HIPAA, FMLA, the NJ Continuation of Coverage, and the NJ Over Age 30 Dependent Law.</p></div><div class="why-card"><span class="why-num">03</span><p>Our expertise in offsetting employee liability in high-deductible health plans with cost-sharing funding mechanisms.</p></div><div class="why-card"><span class="why-num">04</span><p>We&rsquo;re responsive to our clients&rsquo; financial needs and accommodate their investment inquiries.</p></div><div class="why-card"><span class="why-num">05</span><p>We understand our clients&rsquo; needs and work within their budget for the most cost-effective employee benefits.</p></div><div class="why-card"><span class="why-num">06</span><p>We understand that great employee benefits contribute to higher employee retention.</p></div></div>
+      <div class="addl-head">
+        <div><p class="eyebrow">Additional Services</p><h2>More than just the plan.</h2></div>
+        <button type="button" class="addl-toggle" id="addl-toggle" data-state="closed">Expand all</button>
+      </div>
+      <div class="addl-acc"><details class="addl-item"><summary><span class="addl-title">Benefit Plan Analysis</span><span class="addl-count">9 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Compare language and plan features</li><li>Review current programs and alternate programs</li><li>Recommend options, if any</li><li>Negotiate benefits &amp; cost</li><li>Review limitations and exclusions</li><li>Contract flexibility</li><li>Employee contribution strategy</li><li>Negotiate plan, benefits, and rates</li><li>Target marketing</li></ul></details><details class="addl-item"><summary><span class="addl-title">Implementation</span><span class="addl-count">6 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Oversee and recommend action to new carrier(s)</li><li>Work with carrier representatives</li><li>Conduct enrollment meetings</li><li>Oversee the open enrollment process</li><li>Review all plan documents</li><li>Review all employee booklets and/or certificates</li></ul></details><details class="addl-item"><summary><span class="addl-title">Claims Handling</span><span class="addl-count">3 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Appeal</li><li>Analysis of claim payment</li><li>Timely submission</li></ul></details><details class="addl-item"><summary><span class="addl-title">Financials</span><span class="addl-count">3 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Overall rate analysis</li><li>True cost analysis</li><li>Alternate funding methods</li></ul></details><details class="addl-item"><summary><span class="addl-title">Individual Products</span><span class="addl-count">3 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Disability</li><li>Medical</li><li>Life</li></ul></details><details class="addl-item"><summary><span class="addl-title">Reference Check</span><span class="addl-count">1 item</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Interview policyholders of similar size and industry of recommended carriers</li></ul></details><details class="addl-item"><summary><span class="addl-title">Other</span><span class="addl-count">6 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>ARRA</li><li>COBRA</li><li>HIPAA compliance</li><li>HRA/HSA administration</li><li>NJ Continuation</li><li>Dependent to age 31</li></ul></details></div>
     </div>
   </section>
   <section class="svc-cta">
@@ -2074,6 +2118,32 @@
     var src = document.querySelector('#tab-ledger .build .service-card:nth-child(' + img.dataset.from + ') .service-card-photo img');
     if (src) { img.src = src.src; img.alt = src.alt; }
   });
+
+  // Services page: sticky jump nav + accordion
+  (function(){
+    var bar = document.querySelector('.review-bar');
+    function setRb(){ if (bar) document.documentElement.style.setProperty('--rb-h', bar.offsetHeight + 'px'); }
+    setRb(); window.addEventListener('resize', setRb);
+    document.querySelectorAll('#tab-services [data-scroll]').forEach(function(a){
+      a.addEventListener('click', function(e){ e.preventDefault(); var el = document.getElementById(a.dataset.scroll); if (el) el.scrollIntoView(); });
+    });
+    var links = [].slice.call(document.querySelectorAll('#tab-services .svc-jump a[data-scroll]'));
+    function onScroll(){
+      var main = document.getElementById('tab-services');
+      if (!main || !main.classList.contains('active')) return;
+      var off = (bar ? bar.offsetHeight : 64) + 90, cur = null;
+      links.forEach(function(a){ var el = document.getElementById(a.dataset.scroll); if (el && el.getBoundingClientRect().top <= off) cur = a; });
+      links.forEach(function(a){ a.classList.toggle('is-active', a === cur); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    var tg = document.getElementById('addl-toggle');
+    if (tg) tg.addEventListener('click', function(){
+      var open = tg.dataset.state !== 'open';
+      document.querySelectorAll('#tab-services .addl-item').forEach(function(d){ d.open = open; });
+      tg.dataset.state = open ? 'open' : 'closed';
+      tg.textContent = open ? 'Collapse all' : 'Expand all';
+    });
+  })();
 </script>
 
 </body>
