@@ -810,6 +810,45 @@
   .addl-item li{position:relative;padding:5px 0 5px 20px;font-size:15px;}
   .addl-item li::before{content:"";position:absolute;left:0;top:.95em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
   @media(max-width:800px){.addl-acc{grid-template-columns:1fr;}.svc-jump-cta{display:none;}}
+
+  /* ---- Services page: premium polish ---- */
+  #tab-services .svc-benefits-head .eyebrow,#tab-services .pbs-services-band .eyebrow,#tab-services .why-section .eyebrow,#tab-services .addl-head .eyebrow,#tab-services .carriers-head .eyebrow{display:flex;align-items:center;gap:14px;}
+  #tab-services .svc-benefits-head .eyebrow::after,#tab-services .pbs-services-band .eyebrow::after,#tab-services .why-section .eyebrow::after,#tab-services .addl-head .eyebrow::after,#tab-services .carriers-head .eyebrow::after{content:"";width:56px;height:1px;background:var(--gold);}
+  .svc-meta{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .svc-num{font:500 54px/1 'Frank Ruhl Libre',serif;color:var(--gold);letter-spacing:-.01em;}
+  .svc-rule{flex:1;max-width:120px;height:1px;background:var(--gold);transform-origin:left;transition:transform .9s ease .3s;}
+  #tab-services .svc-meta svg{width:30px;height:30px;color:var(--maroon);flex:none;margin-left:auto;}
+  .svc-photo{position:relative;}
+  .svc-photo::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--gold);border-radius:4px;transition:inset .35s ease;pointer-events:none;}
+  .svc-row:nth-child(even) .svc-photo::before{inset:16px 16px -16px -16px;}
+  .svc-row:hover .svc-photo::before{inset:9px -9px -9px 9px;}
+  .svc-row:nth-child(even):hover .svc-photo::before{inset:9px 9px -9px -9px;}
+  .svc-photo img{position:relative;z-index:1;}
+  .carriers-section{background:var(--paper);padding:64px 0 72px;border-top:1px solid var(--stone-light);}
+  .carriers-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px;}
+  .carriers-head h2{font-size:clamp(26px,3vw,36px);line-height:1.15;margin:0;}
+  .carriers-link{font:600 15px 'Public Sans',sans-serif;color:var(--maroon);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;}
+  .carriers-link:hover{border-bottom-color:var(--maroon);}
+  .carrier-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .carrier-logo{display:flex;align-items:center;justify-content:center;height:88px;padding:16px 20px;background:#fff;border:1px solid var(--stone-light);border-radius:4px;text-decoration:none;}
+  .carrier-logo img{max-height:40px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .3s ease,opacity .3s ease;}
+  .carrier-logo:hover img{filter:none;opacity:1;}
+  .carrier-logo:hover{border-color:var(--gold);}
+  /* motion */
+  #tab-services .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s);}
+  #tab-services .rv.rv-l{transform:translateX(-44px);}
+  #tab-services .rv.rv-r{transform:translateX(44px);}
+  #tab-services .rv.in{opacity:1;transform:none;}
+  #tab-services .rv.done{transition:opacity .25s ease,transform .25s ease,box-shadow .25s ease,border-color .25s ease;transition-delay:0s;}
+  #tab-services .svc-text.rv:not(.in) .svc-rule{transform:scaleX(0);}
+  #tab-services .why-card.done:hover,#tab-services .pbs-service.done:hover,#tab-services .carrier-logo.done:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(32,33,36,.10);}
+  .addl-item{transition:box-shadow .25s ease;}
+  .addl-item:hover{box-shadow:0 8px 20px rgba(32,33,36,.08);}
+  @keyframes accIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+  .addl-item[open] ul{animation:accIn .28s ease;}
+  @media(max-width:1000px){.carrier-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:800px){.carrier-grid{grid-template-columns:repeat(2,1fr);}.svc-photo::before,.svc-row:nth-child(even) .svc-photo::before{inset:10px -8px -10px 8px;}.svc-num{font-size:42px;}}
+  @media(prefers-reduced-motion:reduce){#tab-services .rv{opacity:1;transform:none;transition:none;}.svc-rule{transition:none;}.addl-item[open] ul{animation:none;}}
   @media(max-width:800px){.svc-row{grid-template-columns:1fr;gap:28px;padding:40px 0;}.svc-row:nth-child(even) .svc-photo{order:0;}.svc-photo img{height:240px;}.svc-list{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -1686,6 +1725,7 @@
         <a href="#svc-why" data-scroll="svc-why">Why PBS</a>
         <a href="#svc-benefits" data-scroll="svc-benefits">Benefits</a>
         <a href="#svc-additional" data-scroll="svc-additional">Additional Services</a>
+        <a href="#svc-carriers" data-scroll="svc-carriers">Carriers</a>
       </div>
       <a class="btn btn-primary svc-jump-cta" href="#">Schedule a Consultation</a>
     </div>
@@ -1710,7 +1750,7 @@
       <article class="svc-row" id="svc-health">
         <div class="svc-photo"><img data-from="1" src="" alt=""></div>
         <div class="svc-text">
-          <span class="svc-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.8 9.2 2.3 5.5 5.8 5c2.1-.3 3.9.8 4.7 2.5C11.3 5.8 13.1 4.7 15.2 5c3.5.5 5 4.2 3.3 7.5C19 16.65 12 21 12 21z"/></svg></span>
+          <div class="svc-meta"><span class="svc-num">01</span><span class="svc-rule"></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.8 9.2 2.3 5.5 5.8 5c2.1-.3 3.9.8 4.7 2.5C11.3 5.8 13.1 4.7 15.2 5c3.5.5 5 4.2 3.3 7.5C19 16.65 12 21 12 21z"/></svg></div>
           <h2>Health &amp; Wellness</h2>
           <p>Coverage for your team's everyday health, from medical to wellness programs.</p>
           <ul class="svc-list"><li>Medical (ACA/Level)</li><li>Health &ndash; HRA / HSA</li><li>Dental</li><li>Vision</li><li>Wellness benefits</li></ul>
@@ -1719,7 +1759,7 @@
       <article class="svc-row" id="svc-income">
         <div class="svc-photo"><img data-from="2" src="" alt=""></div>
         <div class="svc-text">
-          <span class="svc-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div class="svc-meta"><span class="svc-num">02</span><span class="svc-rule"></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h2>Income Protection</h2>
           <p>Protect your employees' paychecks if illness, injury, or loss changes life unexpectedly.</p>
           <ul class="svc-list"><li>Life</li><li>Short-term disability</li><li>Long-term disability</li><li>Temporary disability</li></ul>
@@ -1728,7 +1768,7 @@
       <article class="svc-row" id="svc-compliance">
         <div class="svc-photo"><img data-from="3" src="" alt=""></div>
         <div class="svc-text">
-          <span class="svc-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 15h6M9 9h2"/></svg></span>
+          <div class="svc-meta"><span class="svc-num">03</span><span class="svc-rule"></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 15h6M9 9h2"/></svg></div>
           <h2>Compliance &amp; HR</h2>
           <p>We act as an extension of your HR department, with advice on the benefits-related laws that apply to your business.</p>
           <ul class="svc-list"><li>Section 125 cafeteria plans</li><li>HR compliance</li><li>COBRA / HIPAA / ACA</li><li>FMLA</li><li>NJ Continuation of Coverage</li><li>NJ Over Age 30 Dependent Law</li><li>ERISA guidance</li></ul>
@@ -1737,7 +1777,7 @@
       <article class="svc-row" id="svc-extras">
         <div class="svc-photo"><img data-from="4" src="" alt=""></div>
         <div class="svc-text">
-          <span class="svc-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 0 0-2-1.2L14 3h-4l-.4 2.4a7 7 0 0 0-2.1 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 0 0 5 12a7 7 0 0 0 .1 1.2l-2 1.5 2 3.4 2.3-.9a7 7 0 0 0 2.1 1.2L10 21h4l.4-2.4a7 7 0 0 0 2-1.2l2.3.9 2-3.4-2-1.5A7 7 0 0 0 19 12z"/></svg></span>
+          <div class="svc-meta"><span class="svc-num">04</span><span class="svc-rule"></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 0 0-2-1.2L14 3h-4l-.4 2.4a7 7 0 0 0-2.1 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 0 0 5 12a7 7 0 0 0 .1 1.2l-2 1.5 2 3.4 2.3-.9a7 7 0 0 0 2.1 1.2L10 21h4l.4-2.4a7 7 0 0 0 2-1.2l2.3.9 2-3.4-2-1.5A7 7 0 0 0 19 12z"/></svg></div>
           <h2>Extras</h2>
           <p>Add-ons that round out your program and make it easier to run.</p>
           <ul class="svc-list"><li>Voluntary benefits</li><li>Worksite benefits</li><li>Employee technology</li><li>Claims handling</li></ul>
@@ -1758,6 +1798,16 @@
         <button type="button" class="addl-toggle" id="addl-toggle" data-state="closed">Expand all</button>
       </div>
       <div class="addl-acc"><details class="addl-item"><summary><span class="addl-title">Benefit Plan Analysis</span><span class="addl-count">9 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Compare language and plan features</li><li>Review current programs and alternate programs</li><li>Recommend options, if any</li><li>Negotiate benefits &amp; cost</li><li>Review limitations and exclusions</li><li>Contract flexibility</li><li>Employee contribution strategy</li><li>Negotiate plan, benefits, and rates</li><li>Target marketing</li></ul></details><details class="addl-item"><summary><span class="addl-title">Implementation</span><span class="addl-count">6 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Oversee and recommend action to new carrier(s)</li><li>Work with carrier representatives</li><li>Conduct enrollment meetings</li><li>Oversee the open enrollment process</li><li>Review all plan documents</li><li>Review all employee booklets and/or certificates</li></ul></details><details class="addl-item"><summary><span class="addl-title">Claims Handling</span><span class="addl-count">3 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Appeal</li><li>Analysis of claim payment</li><li>Timely submission</li></ul></details><details class="addl-item"><summary><span class="addl-title">Financials</span><span class="addl-count">3 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Overall rate analysis</li><li>True cost analysis</li><li>Alternate funding methods</li></ul></details><details class="addl-item"><summary><span class="addl-title">Individual Products</span><span class="addl-count">3 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Disability</li><li>Medical</li><li>Life</li></ul></details><details class="addl-item"><summary><span class="addl-title">Reference Check</span><span class="addl-count">1 item</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>Interview policyholders of similar size and industry of recommended carriers</li></ul></details><details class="addl-item"><summary><span class="addl-title">Other</span><span class="addl-count">6 items</span><span class="addl-chev" aria-hidden="true"></span></summary><ul><li>ARRA</li><li>COBRA</li><li>HIPAA compliance</li><li>HRA/HSA administration</li><li>NJ Continuation</li><li>Dependent to age 31</li></ul></details></div>
+    </div>
+  </section>
+  
+  <section class="carriers-section" id="svc-carriers">
+    <div class="container">
+      <div class="carriers-head">
+        <div><p class="eyebrow">Carrier Partners</p><h2>Carriers we work with.</h2></div>
+        <a class="carriers-link" href="#" data-goto="library">View the Reference Library &rarr;</a>
+      </div>
+      <div class="carrier-grid"><a class="carrier-logo" href="#" data-goto="library" aria-label="Aetna &mdash; see the Reference Library"><img data-from="1" src="" alt="Aetna"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="AmeriHealth &mdash; see the Reference Library"><img data-from="2" src="" alt="AmeriHealth"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Ameritas &mdash; see the Reference Library"><img data-from="3" src="" alt="Ameritas"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Cigna Healthcare &mdash; see the Reference Library"><img data-from="4" src="" alt="Cigna Healthcare"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Colonial Life &mdash; see the Reference Library"><img data-from="5" src="" alt="Colonial Life"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="EyeMed &mdash; see the Reference Library"><img data-from="6" src="" alt="EyeMed"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Guardian Life &mdash; see the Reference Library"><img data-from="7" src="" alt="Guardian Life"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Highmark &mdash; see the Reference Library"><img data-from="8" src="" alt="Highmark"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Horizon Blue Cross Blue Shield of NJ &mdash; see the Reference Library"><img data-from="9" src="" alt="Horizon Blue Cross Blue Shield of NJ"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Independence Blue Cross &mdash; see the Reference Library"><img data-from="10" src="" alt="Independence Blue Cross"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="MetLife &mdash; see the Reference Library"><img data-from="11" src="" alt="MetLife"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Principal Financial Group &mdash; see the Reference Library"><img data-from="12" src="" alt="Principal Financial Group"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="The Standard &mdash; see the Reference Library"><img data-from="13" src="" alt="The Standard"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="UnitedHealthcare &mdash; see the Reference Library"><img data-from="14" src="" alt="UnitedHealthcare"></a><a class="carrier-logo" href="#" data-goto="library" aria-label="Unum &mdash; see the Reference Library"><img data-from="15" src="" alt="Unum"></a></div>
     </div>
   </section>
   <section class="svc-cta">
@@ -2143,6 +2193,29 @@
       tg.dataset.state = open ? 'open' : 'closed';
       tg.textContent = open ? 'Collapse all' : 'Expand all';
     });
+  })();
+
+  // Services page: carrier logos (reused from the Library cards) + scroll-reveal motion
+  (function(){
+    document.querySelectorAll('#tab-services .carrier-logo img[data-from]').forEach(function(img){
+      var src = document.querySelector('#lib-grid .lib-card:nth-child(' + img.dataset.from + ') img');
+      if (src) img.src = src.src;
+    });
+    var main = document.getElementById('tab-services'); if (!main) return;
+    function mark(el, delay, dir){ el.classList.add('rv'); if (dir) el.classList.add(dir); if (delay) el.style.setProperty('--d', delay + 's'); }
+    main.querySelectorAll('.svc-benefits-head,.addl-head,.carriers-head,.svc-mid-inner,.svc-text').forEach(function(el){ mark(el, 0); });
+    main.querySelectorAll('.pbs-services-band .container > .eyebrow,.pbs-services-band .container > h2,.why-section .container > .eyebrow,.why-section .container > h2').forEach(function(el){ mark(el, 0); });
+    main.querySelectorAll('.svc-photo').forEach(function(el){ mark(el, 0.05, getComputedStyle(el).order === '2' ? 'rv-r' : 'rv-l'); });
+    [['.pbs-service',4],['.why-card',3],['.addl-item',2],['.carrier-logo',5]].forEach(function(g){
+      main.querySelectorAll(g[0]).forEach(function(el,i){ mark(el, (i % g[1]) * 0.09); });
+    });
+    var els = main.querySelectorAll('.rv');
+    function show(el){ el.classList.add('in'); setTimeout(function(){ el.classList.add('done'); }, 1300); }
+    if (!('IntersectionObserver' in window)) { els.forEach(show); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
   })();
 </script>
 
