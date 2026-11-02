@@ -1,0 +1,9 @@
+{
+  "name": "pbs-website",
+  "private": true,
+  "description": "Progressive Benefits Solutions website",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@vercel/blob": "^1.0.0"
+  }
+}

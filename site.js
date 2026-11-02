@@ -172,6 +172,57 @@
     });
   }
 
+
+  /* ---------- Newsletters (homepage band + /newsletters page) ---------- */
+  (function () {
+    var list = document.getElementById('nl-list'), band = $('.newsletter-section');
+    if (!list && !band) return;
+    function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+    function fmtDate(d) {
+      var p = String(d).split('-');
+      return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    function meta(i) { return [fmtDate(i.date), i.source].filter(Boolean).join(' \u00b7 '); }
+    function openLink(a, i) { a.href = i.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
+    function render(items) {
+      list.textContent = '';
+      if (!items.length) {
+        var p = el('p', 'nl-status', 'No newsletters have been posted yet. Please check back soon, or visit ');
+        var a = el('a', null, 'nabip.org'); a.href = 'https://www.nabip.org'; a.rel = 'noopener'; p.appendChild(a); p.appendChild(document.createTextNode(' for industry news.'));
+        list.appendChild(p); return;
+      }
+      var latest = items[0], card = el('article', 'nl-latest');
+      card.appendChild(el('p', 'nl-latest-label', 'Latest issue'));
+      card.appendChild(el('h2', null, latest.title));
+      card.appendChild(el('p', 'nl-meta', meta(latest)));
+      card.appendChild(openLink(el('a', 'btn btn-light', latest.kind === 'pdf' ? 'Read the PDF' : 'Read the newsletter'), latest));
+      list.appendChild(card);
+      if (items.length > 1) {
+        list.appendChild(el('h2', 'nl-archive-title', 'Earlier issues'));
+        var ul = el('ul', 'nl-archive');
+        items.slice(1).forEach(function (i) {
+          var li = el('li'), a = openLink(el('a', 'nl-row'), i);
+          a.appendChild(el('span', 'nl-row-title', i.title));
+          a.appendChild(el('span', 'nl-row-meta', meta(i) + ' \u00b7 ' + (i.kind === 'pdf' ? 'PDF' : 'Link')));
+          a.appendChild(el('span', 'nl-row-go', 'Open \u2192'));
+          li.appendChild(a); ul.appendChild(li);
+        });
+        list.appendChild(ul);
+      }
+    }
+    function updateBand(i) {
+      if (!i) return;
+      var btn = $('.newsletter-section-btn', band), txt = $('p', band), logo = $('img', band);
+      if (btn) { btn.href = i.url; btn.target = '_blank'; btn.rel = 'noopener noreferrer'; }
+      if (txt) txt.textContent = 'Read our latest newsletter' + (i.source ? ' from ' + i.source : '') + ': ' + i.title + '.';
+      if (logo) logo.style.display = i.source === 'NABIP' ? '' : 'none';
+    }
+    fetch('/api/newsletters', { headers: { Accept: 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error('bad'); return r.json(); })
+      .then(function (d) { var items = (d && d.items) || []; if (list) render(items); if (band) updateBand(items[0]); })
+      .catch(function () { if (list) { list.textContent = ''; list.appendChild(el('p', 'nl-status', 'Newsletters are not available right now. Please try again later.')); } });
+  })();
+
   /* ---------- Deep links: re-align after images/animations settle ---------- */
   if (location.hash.length > 1) {
     window.addEventListener('load', function () {

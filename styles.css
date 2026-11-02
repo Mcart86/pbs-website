@@ -847,3 +847,40 @@ a.footer-badge:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0
 .main-nav .nav-popover a.np-dir{font-weight:600;color:var(--maroon);border-bottom:0;}
 .main-nav .nav-popover a:hover{color:var(--maroon);border-bottom-color:var(--maroon);}
 .main-nav .nav-popover address{margin:0 0 12px;}
+
+/* Newsletters */
+.nl-section,.nl-admin{padding:48px 0 72px;}
+.nl-wrap{max-width:900px;}
+.nl-status{font-size:16.5px;color:var(--stone);margin:0 0 14px;}
+.nl-latest{position:relative;background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);color:#fff;border-radius:4px;padding:34px 38px 36px;margin:0 0 44px;box-shadow:0 10px 28px rgba(122,0,40,.22);}
+.nl-latest::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:4px 4px 0 0;background:var(--gold-grad);background-size:300% 100%;animation:goldX 8s ease-in-out infinite alternate;}
+.nl-latest-label{margin:0 0 8px;font:700 12px 'Public Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C783;}
+.nl-latest h2{color:#fff;font-size:clamp(26px,3.4vw,36px);line-height:1.15;margin:0 0 8px;}
+.nl-meta{margin:0 0 22px;color:rgba(255,255,255,.88);font-size:15.5px;}
+.nl-archive-title{font-size:clamp(22px,2.6vw,28px);margin:0 0 6px;}
+.nl-archive{list-style:none;margin:0;padding:0;}
+.nl-row{display:flex;align-items:center;gap:18px;padding:18px 4px;border-bottom:1px solid var(--stone-light);text-decoration:none;color:var(--ink);flex-wrap:wrap;}
+.nl-row-title{flex:1 1 280px;font:500 20px/1.3 'Frank Ruhl Libre',serif;}
+.nl-row-meta{font-size:14.5px;color:var(--stone);}
+.nl-row-go{font:600 14.5px 'Public Sans',sans-serif;color:var(--maroon);}
+.nl-row:hover .nl-row-title{color:var(--maroon);}
+.nl-all{margin:14px 0 0;}
+.nl-admin-wrap{max-width:760px;}
+.nl-form{margin-bottom:44px;}
+.nl-form .ct-row{margin-bottom:0;}
+.nl-kind{border:0;margin:0 0 18px;padding:0;}
+.nl-kind legend{font:600 13px 'Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--stone);padding:0;margin-bottom:8px;}
+.nl-form label.nl-radio{display:flex;align-items:center;gap:10px;margin:0 0 8px;font:500 16.5px 'Public Sans',sans-serif;letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer;min-height:36px;}
+.nl-form label.nl-radio input{width:20px;height:20px;margin:0;display:inline-block;}
+.nl-form input[type=file]{padding:12px;background:#fff;}
+.nl-msg{margin:16px 0 0;padding:12px 14px;border-left:3px solid #C5A04B;border-radius:4px;font-size:15.5px;background:#f4f6f4;}
+.nl-msg.is-ok{border-left-color:#2e7d4f;background:#f1f8f3;}
+.nl-msg.is-error{border-left-color:var(--maroon);background:#fbf1f3;}
+.nl-manage h2{font-size:clamp(22px,2.6vw,28px);margin:0 0 12px;}
+.nl-admin-list{list-style:none;margin:0 0 18px;padding:0;}
+.nl-admin-list li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--stone-light);}
+.nl-admin-list a{font-weight:600;color:var(--maroon);}
+.nl-admin-list span{display:block;font-size:14px;color:var(--stone);margin-top:2px;}
+.nl-remove{flex:none;background:#fff;border:1px solid var(--stone-light);border-radius:4px;padding:10px 16px;font:600 14px 'Public Sans',sans-serif;color:var(--ink);cursor:pointer;}
+.nl-remove:hover{border-color:var(--maroon);color:var(--maroon);}
+@media(max-width:700px){.nl-latest{padding:26px 22px 28px;}}

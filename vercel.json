@@ -51,6 +51,19 @@
           "value": "public, max-age=86400"
         }
       ]
+    },
+    {
+      "source": "/newsletter-admin",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     }
   ]
 }
