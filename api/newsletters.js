@@ -65,7 +65,7 @@ module.exports = async function handler(req, res) {
     res.setHeader('Allow', 'GET, POST, DELETE');
     return send(res, 405, { error: 'Method not allowed' });
   } catch (e) {
-    if (e instanceof L.HttpError) return send(res, e.status, { error: e.message, code: e.code }, { 'Cache-Control': 'no-store' });
+    if (e instanceof L.HttpError) return send(res, e.status, { error: e.message, code: e.code, missing: e.missing }, { 'Cache-Control': 'no-store' });
     console.error('newsletters api error:', e && e.message);
     return send(res, 500, { error: 'Something went wrong. Please try again in a moment.' }, { 'Cache-Control': 'no-store' });
   }

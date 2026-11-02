@@ -30,7 +30,11 @@
     });
   }
   function friendly(status, data) {
-    if (data && data.code === 'not_configured') return "This page isn't fully set up yet (storage or password). Please ask Mike to finish the setup.";
+    if (data && data.code === 'not_configured') {
+      if (data.missing === 'password') return "The upload password hasn't reached the website yet. Please ask Mike to check the password setting and redeploy.";
+      if (data.missing === 'storage') return "The file storage isn't connected to the website yet. Please ask Mike to check the storage connection and redeploy.";
+      return "This page isn't fully set up yet. Please ask Mike to finish the setup.";
+    }
     if (status === 401) return "That password isn't right. Please try again.";
     if (status === 413) return data && data.error ? data.error : 'That file is too large (4 MB maximum). Please compress the PDF and try again.';
     if (data && data.error) return data.error;
