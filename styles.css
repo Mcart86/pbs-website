@@ -816,6 +816,34 @@ a[href^="mailto:"]:not(.btn),a[href^="tel:"]:not(.btn){display:inline-block;padd
 .footer-badge{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:6px;padding:10px 20px;height:68px;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:transform .2s ease,box-shadow .2s ease;}
 a.footer-badge:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.26);}
 .footer-badge img{display:block;height:44px;width:auto;max-width:100%;}
-.footer-badge-aca{height:auto;padding:8px 22px;}
-.footer-badge-aca img{height:80px;}
 @media(max-width:700px){.footer-badges{padding-left:20px;padding-right:20px;}}
+
+/* About Us hover card */
+.site-header{z-index:300;}
+.main-nav li{position:relative;}
+.nav-popover{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:330px;padding-top:18px;z-index:400;}
+.has-popover:hover .nav-popover,.has-popover:focus-within .nav-popover{display:block;animation:npIn .18s ease;}
+.has-popover.is-dismissed .nav-popover{display:none;}
+.np-card{position:relative;background:#fff;border:1px solid var(--stone-light);border-radius:6px;padding:20px 22px 18px;box-shadow:0 18px 40px rgba(32,33,36,.18);text-align:left;}
+.np-card::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;border-radius:6px 6px 0 0;background:var(--gold-grad);background-size:300% 100%;animation:goldX 8s ease-in-out infinite alternate;}
+.np-card::after{content:"";position:absolute;top:-7px;left:50%;width:12px;height:12px;background:#fff;border-left:1px solid var(--stone-light);border-top:1px solid var(--stone-light);transform:translateX(-50%) rotate(45deg);}
+.np-title{margin:0 0 8px;font:700 12px 'Public Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);}
+.np-card address{font-style:normal;font-size:15.5px;line-height:1.5;color:var(--ink);margin:0 0 12px;}
+.np-list{list-style:none;margin:0 0 10px;padding:0;}
+.np-list li{display:flex;gap:12px;align-items:baseline;padding:2px 0;}
+.np-list li span{flex:none;width:46px;font:600 12px 'Public Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);}
+.np-list a,.np-dir{color:var(--ink);font-size:15px;text-decoration:none;border-bottom:1px solid var(--stone-light);padding:5px 0;display:inline-block;overflow-wrap:anywhere;}
+.np-list a:hover,.np-dir:hover{color:var(--maroon);border-bottom-color:var(--maroon);}
+.np-dir{color:var(--maroon);font-weight:600;border-bottom:0;margin-top:2px;}
+@keyframes npIn{from{opacity:0;transform:translateX(-50%) translateY(-6px);}to{opacity:1;transform:translateX(-50%);}}
+@media(max-width:960px){.nav-popover{display:none!important;}}
+@media(prefers-reduced-motion:reduce){.has-popover:hover .nav-popover,.has-popover:focus-within .nav-popover{animation:none;}}
+
+/* About Us hover card: protect from nav list styles */
+.main-nav .nav-popover ul.np-list{display:block;flex-direction:column;gap:0;margin:0 0 10px;padding:0;list-style:none;}
+.main-nav .nav-popover ul.np-list li{display:flex;gap:12px;align-items:baseline;padding:2px 0;margin:0;}
+.main-nav .nav-popover a{font-weight:500;letter-spacing:0;text-transform:none;white-space:normal;padding:5px 0;border-bottom:1px solid var(--stone-light);}
+.main-nav .nav-popover a::before{display:none;}
+.main-nav .nav-popover a.np-dir{font-weight:600;color:var(--maroon);border-bottom:0;}
+.main-nav .nav-popover a:hover{color:var(--maroon);border-bottom-color:var(--maroon);}
+.main-nav .nav-popover address{margin:0 0 12px;}

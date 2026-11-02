@@ -18,6 +18,12 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 960) setOpen(false); });
   }
 
+  /* ---------- About Us hover card ---------- */
+  $$('.has-popover').forEach(function (li) {
+    li.addEventListener('keydown', function (e) { if (e.key === 'Escape') li.classList.add('is-dismissed'); });
+    ['mouseleave', 'focusout'].forEach(function (ev) { li.addEventListener(ev, function () { li.classList.remove('is-dismissed'); }); });
+  });
+
   /* ---------- Homepage: reveal + counters ---------- */
   (function () {
     var els = $$('.reveal');
